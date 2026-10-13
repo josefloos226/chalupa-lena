@@ -1,3 +1,16 @@
+# LENA WEB V3.0
+
+## Změny oproti V2.38
+- Automatická odpověď klientovi přes FormSubmit (_autoresponse), podepsaná Josef a Petra.
+- Potvrzení výslovně uvádí, že nejde o potvrzení rezervace.
+- Počet hostů je povinný údaj v rozsahu 1–12.
+- Upravené potvrzení odeslání na webu.
+- Zachován vzhled, ostatní stránky a fotografie z V2.38.
+
+Poznámka: doručení automatické odpovědi je potřeba po nasazení otestovat; závisí na FormSubmit a jeho nastavení.
+
+---
+
 # LENA WEB V2.16
 Navazuje na V2.14.
 
