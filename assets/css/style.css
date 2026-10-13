@@ -1,0 +1,3969 @@
+
+:root {
+  --white:#ffffff; --ivory:#f8f6f1; --anth:#242625; --black:#151615;
+  --text:#2a2a27; --muted:#77746e; --line:#dedad1; --gold:#b89a62;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--white);color:var(--text);font-family:Arial,Helvetica,sans-serif}
+a{color:inherit;text-decoration:none}
+img{width:100%;display:block;object-fit:cover}
+.serif{font-family:Georgia,"Times New Roman",serif;font-weight:400}
+.kicker{font-size:10px;letter-spacing:.19em;text-transform:uppercase;color:#7e7b75}
+.rule{width:42px;height:2px;background:var(--gold);margin:22px 0}
+.wrap{max-width:1440px;margin:auto}
+
+nav{height:82px;padding:0 5vw;display:flex;align-items:center;justify-content:space-between;background:#fff}
+.brand{font:400 38px Georgia,serif;letter-spacing:.22em;line-height:1;color:var(--gold)}
+.brand small{display:block;font:8px Arial,sans-serif;letter-spacing:.17em;margin-top:7px;color:#777}
+.links{display:flex;gap:33px;align-items:center;font-size:15px;font-weight:600;letter-spacing:.005em}
+.navcta{padding:15px 23px;border:1px solid var(--gold);color:#947746;text-transform:uppercase;letter-spacing:.06em;font-size:12px;font-weight:500}
+
+.hero{height:calc(100vh - 82px);min-height:650px;background:center/cover no-repeat;position:relative}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(38,40,39,.76) 0%,rgba(52,53,51,.62) 18%,rgba(65,65,62,.38) 36%,rgba(50,50,48,.14) 54%,rgba(0,0,0,.02) 72%)}
+.heroText{position:absolute;z-index:2;left:6vw;top:45%;transform:translateY(-50%);color:white;max-width:660px}
+.heroText h1{font-size:clamp(56px,6.7vw,98px);line-height:.98;margin:13px 0 18px}
+.heroText p{font:400 clamp(20px,2vw,29px)/1.35 Georgia,serif;max-width:520px;margin:0}
+.actions{display:flex;gap:12px;margin-top:31px}
+.btn{padding:15px 22px;font-size:10px;letter-spacing:.04em}
+.btn.gold{background:var(--gold);color:white}
+.btn.ghost{border:1px solid rgba(255,255,255,.75);color:white}
+.heroBenefits{position:absolute;z-index:2;bottom:34px;left:6vw;right:6vw;display:flex;gap:42px;color:white;font-size:10px}
+.heroBenefits span{display:flex;gap:8px;align-items:center}
+.heroBenefits i{font:400 19px Georgia,serif;color:#e4d1ac}
+
+.intro{padding:105px 6vw;display:grid;grid-template-columns:.78fr 1.22fr;gap:7vw;align-items:center}
+.intro h2,.rooms h2,.region h2,.audience h2{font-size:clamp(43px,5.2vw,76px);line-height:1.02;margin:12px 0}
+.intro p,.roomsLead,.region p{color:var(--muted);line-height:1.78;max-width:540px}
+.collage{display:grid;grid-template-columns:1.25fr .75fr;gap:12px}
+.collage>img{height:61vh}
+.mini{display:grid;gap:12px}
+.mini img{height:calc(30.5vh - 6px)}
+
+.quick{margin:0 6vw 105px;display:grid;grid-template-columns:repeat(4,1fr);border-block:1px solid var(--line)}
+.quick div{padding:27px 15px;text-align:center;border-right:1px solid var(--line)}
+.quick div:last-child{border:0}
+.quick strong{font:400 29px Georgia,serif;display:block;margin-bottom:5px}
+.quick span{font-size:9px;text-transform:uppercase;letter-spacing:.11em;color:var(--muted)}
+
+.rooms{padding:105px 6vw;background:var(--ivory)}
+.roomsTop{display:grid;grid-template-columns:.63fr 1.37fr;gap:6vw;align-items:end;margin-bottom:46px}
+.roomsLead{margin:0 0 5px}
+.roomGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+.room img{height:43vh;min-height:340px}
+.room h3{font:400 22px Georgia,serif;margin:24px 0 8px}
+.room a{font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:#8d7144}
+.allRooms{display:inline-block;border:1px solid var(--gold);padding:14px 20px;margin-top:31px;font-size:10px}
+
+.experience{padding:110px 6vw;display:grid;grid-template-columns:1.15fr .85fr;gap:7vw;align-items:center}
+.experience img{height:70vh}
+.experience h2{font-size:clamp(43px,5vw,73px);line-height:1.02;margin:12px 0}
+.experience p{color:var(--muted);line-height:1.78}
+.micro{display:grid;grid-template-columns:1fr 1fr;gap:25px;margin-top:32px;padding-top:26px;border-top:1px solid var(--line)}
+.micro strong{font:400 19px Georgia,serif}
+.micro p{font-size:12px;margin:7px 0}
+
+.region{display:grid;grid-template-columns:1fr 1fr;background:var(--anth);color:white}
+.region img{height:72vh}
+.regionText{padding:7vw;display:flex;justify-content:center;flex-direction:column}
+.region .kicker{color:#aaa}
+.region p{color:#c6c7c4}
+.regionLink{color:#d2b77f;font-size:10px;text-transform:uppercase;letter-spacing:.08em;margin-top:13px}
+
+.audience{padding:95px 6vw}
+.audienceHead{display:grid;grid-template-columns:.75fr 1.25fr;gap:7vw;align-items:end}
+.audienceHead p{color:var(--muted);line-height:1.7;max-width:540px}
+.audienceGrid{display:grid;grid-template-columns:repeat(4,1fr);margin-top:45px;border-top:1px solid var(--line)}
+.aud{padding:30px 25px;border-right:1px solid var(--line)}
+.aud:last-child{border:0}
+.aud .ico{font:400 25px Georgia,serif;color:var(--gold)}
+.aud h3{font:400 20px Georgia,serif;margin:12px 0 7px}
+.aud p{font-size:12px;color:var(--muted);line-height:1.55}
+
+.gallery{padding:0 6vw 105px}
+.galleryGrid{display:grid;grid-template-columns:1.3fr .7fr;gap:12px}
+.galleryGrid>img{height:65vh}
+.galleryStack{display:grid;gap:12px}
+.galleryStack img{height:calc(32.5vh - 6px)}
+.galleryFoot{display:flex;justify-content:space-between;padding-top:17px;font-size:10px;color:var(--muted)}
+.galleryFoot a{color:#8d7144}
+
+.contact{margin:0 3vw 3vw;background:var(--black);color:white;padding:95px 7vw;display:grid;grid-template-columns:1.12fr .88fr;gap:8vw;align-items:end}
+.contact h2{font-size:clamp(52px,7vw,98px);line-height:.9;margin:12px 0}
+.contact p{color:#c7c7c4;line-height:1.75;max-width:500px}
+.contact .btn{display:inline-block;margin-top:18px}
+
+footer{padding:5px 5vw 30px;display:flex;justify-content:space-between;color:#777;font-size:9px;letter-spacing:.1em;text-transform:uppercase}
+
+
+.links>a:not(.navcta){position:relative;padding:9px 0;transition:color .35s ease}
+.links>a:not(.navcta):after{content:"";position:absolute;left:0;bottom:2px;width:0;height:1px;background:var(--gold);transition:width .38s ease}
+.links>a:not(.navcta):hover{color:#9a7a43}
+.links>a:not(.navcta):hover:after{width:100%}
+.navcta{transition:background .35s ease,color .35s ease,transform .35s ease}
+.navcta:hover{background:var(--gold);color:#fff;transform:translateY(-1px)}
+
+.room,.collage img,.mini img,.experience>img,.region>img,.galleryGrid img{overflow:hidden}
+.room img,.collage img,.mini img,.experience>img,.region>img,.galleryGrid img{
+ transition:transform .75s cubic-bezier(.2,.65,.25,1),filter .75s ease;
+}
+.room{overflow:hidden}
+.room:hover img{transform:scale(1.045);filter:contrast(1.03)}
+.room h3,.room a{transition:color .35s ease}
+.room:hover h3,.room:hover a{color:#9a7a43}
+.collage img:hover,.mini img:hover,.experience>img:hover,.region>img:hover,.galleryGrid img:hover{
+ transform:scale(1.025);filter:contrast(1.025);
+}
+
+
+/* V0.13 — druhý slide: společné prostory */
+.intro .collage{grid-template-columns:minmax(0,1.68fr) minmax(230px,.92fr);gap:10px}
+.intro .collage>img{width:100%;height:100%;min-height:560px;object-fit:cover}
+.intro .collage .mini{display:grid;grid-template-rows:1fr 1fr;gap:10px;min-height:560px}
+.intro .collage .mini img{width:100%;height:100%;object-fit:cover}
+
+
+.heroActions a{font-size:14px!important;font-weight:600!important;padding:18px 27px!important;transition:all .38s ease}
+.heroActions a:hover{transform:translateY(-2px)}
+.heroActions a:first-child:hover{filter:brightness(.92);box-shadow:0 8px 22px rgba(0,0,0,.16)}
+.heroActions a:last-child:hover{background:rgba(255,255,255,.92)!important;color:#222!important}
+.heroFacts{font-size:13px!important;font-weight:600}
+.heroFacts>div{transition:color .35s ease,transform .35s ease}
+.heroFacts>div:hover{color:#d0ad68;transform:translateY(-2px)}
+.heroFacts svg,.heroFacts .ico{width:25px!important;height:25px!important;transition:transform .35s ease}
+.heroFacts>div:hover svg,.heroFacts>div:hover .ico{transform:scale(1.12)}
+
+@media(max-width:1120px){
+ .links a:not(.navcta){display:none}
+ .hero{height:82vh}
+ .heroBenefits{gap:15px;flex-wrap:wrap}
+ .intro,.roomsTop,.experience,.region,.audienceHead,.contact{grid-template-columns:1fr}
+ .intro,.rooms,.experience,.audience{padding:78px 6vw}
+ .collage{grid-template-columns:1fr}
+ .collage>img{height:50vh}
+ .mini{grid-template-columns:1fr 1fr}
+ .mini img{height:28vh}
+ .quick{grid-template-columns:1fr 1fr;margin-bottom:75px}
+ .quick div:nth-child(2){border-right:0}
+ .roomGrid{grid-template-columns:1fr 1fr}
+ .room img{height:42vh}
+ .experience img,.region img{height:55vh}
+ .regionText{padding:70px 7vw}
+ .audienceGrid{grid-template-columns:1fr 1fr}
+ .aud:nth-child(2){border-right:0}
+ .gallery{padding:0 0 80px}
+ .galleryGrid{grid-template-columns:1fr}
+ .galleryGrid>img{height:52vh}
+ .galleryStack{grid-template-columns:1fr 1fr}
+ .galleryStack img{height:28vh}
+ .galleryFoot{padding:17px 6vw}
+ .contact{margin:0;padding:75px 7vw}
+ footer{display:block;line-height:2}
+}
+
+/* V0.17 — HERO CTA: larger and clearly interactive */
+.hero .heroActions,
+.heroActions {
+  display:flex !important;
+  gap:18px !important;
+  align-items:center !important;
+}
+.hero .heroActions a,
+.heroActions a {
+  position:relative !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  min-height:58px !important;
+  padding:0 30px !important;
+  font-size:15px !important;
+  line-height:1 !important;
+  font-weight:650 !important;
+  letter-spacing:.01em !important;
+  text-decoration:none !important;
+  cursor:pointer !important;
+  overflow:hidden !important;
+  transition:transform .28s ease, background-color .28s ease, color .28s ease,
+             border-color .28s ease, box-shadow .28s ease !important;
+}
+.hero .heroActions a:first-child,
+.heroActions a:first-child {
+  background:#c9a55f !important;
+  border:1px solid #c9a55f !important;
+  color:#fff !important;
+}
+.hero .heroActions a:first-child:hover,
+.heroActions a:first-child:hover {
+  background:#b5904d !important;
+  border-color:#b5904d !important;
+  transform:translateY(-3px) scale(1.025) !important;
+  box-shadow:0 12px 28px rgba(0,0,0,.24) !important;
+}
+.hero .heroActions a:last-child,
+.heroActions a:last-child {
+  background:rgba(20,20,20,.16) !important;
+  border:1px solid rgba(255,255,255,.82) !important;
+  color:#fff !important;
+  backdrop-filter:blur(2px);
+}
+.hero .heroActions a:last-child:hover,
+.heroActions a:last-child:hover {
+  background:#fff !important;
+  border-color:#fff !important;
+  color:#222 !important;
+  transform:translateY(-3px) scale(1.025) !important;
+  box-shadow:0 12px 28px rgba(0,0,0,.20) !important;
+}
+.hero .heroActions a::after,
+.heroActions a::after {
+  transition:transform .28s ease !important;
+}
+.hero .heroActions a:hover::after,
+.heroActions a:hover::after {
+  transform:translateX(5px) !important;
+}
+.hero .heroActions a:active,
+.heroActions a:active {
+  transform:translateY(0) scale(.985) !important;
+}
+@media(max-width:700px){
+  .hero .heroActions a,.heroActions a{
+    min-height:54px !important;
+    padding:0 22px !important;
+    font-size:14px !important;
+  }
+}
+
+
+/* V0.17 — actual HERO controls */
+.hero .actions{
+  display:flex!important;
+  gap:18px!important;
+  margin-top:30px!important;
+  align-items:center!important;
+}
+.hero .actions .btn{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  min-width:190px!important;
+  min-height:62px!important;
+  padding:0 30px!important;
+  box-sizing:border-box!important;
+  font-size:15px!important;
+  line-height:1!important;
+  font-weight:700!important;
+  letter-spacing:.015em!important;
+  cursor:pointer!important;
+  transition:transform .28s ease,background .28s ease,color .28s ease,
+             border-color .28s ease,box-shadow .28s ease!important;
+}
+.hero .actions .btn.gold{
+  background:#c9a55f!important;
+  border:1px solid #c9a55f!important;
+  color:#fff!important;
+}
+.hero .actions .btn.gold:hover{
+  background:#b58f49!important;
+  border-color:#b58f49!important;
+  transform:translateY(-4px) scale(1.035)!important;
+  box-shadow:0 14px 30px rgba(0,0,0,.25)!important;
+}
+.hero .actions .btn.ghost{
+  background:rgba(15,15,15,.14)!important;
+  border:1px solid rgba(255,255,255,.9)!important;
+  color:#fff!important;
+}
+.hero .actions .btn.ghost:hover{
+  background:#fff!important;
+  border-color:#fff!important;
+  color:#222!important;
+  transform:translateY(-4px) scale(1.035)!important;
+  box-shadow:0 14px 30px rgba(0,0,0,.22)!important;
+}
+.hero .actions .btn:active{transform:translateY(0) scale(.985)!important}
+
+.heroBenefits{
+  font-size:13px!important;
+  font-weight:600!important;
+  gap:48px!important;
+}
+.heroBenefits span{
+  gap:11px!important;
+  transition:transform .28s ease,color .28s ease!important;
+}
+.heroBenefits i{
+  font-size:27px!important;
+  line-height:1!important;
+  transition:transform .28s ease,color .28s ease!important;
+}
+.heroBenefits span:hover{
+  transform:translateY(-3px)!important;
+  color:#e2c27d!important;
+}
+.heroBenefits span:hover i{transform:scale(1.16)!important}
+
+@media(max-width:700px){
+ .hero .actions{gap:10px!important;flex-wrap:wrap!important}
+ .hero .actions .btn{min-width:165px!important;min-height:56px!important;font-size:14px!important;padding:0 20px!important}
+ .heroBenefits{gap:18px!important;font-size:12px!important}
+ .heroBenefits i{font-size:23px!important}
+}
+
+
+/* V0.18 — final homepage sections */
+.brand small{font-size:10px;letter-spacing:.14em;margin-top:8px}
+.hero .actions .btn{min-height:50px!important;padding:0 28px!important;font-size:15px!important;font-weight:650!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;transition:transform .28s ease,background .28s ease,color .28s ease,box-shadow .28s ease!important}
+.hero .actions .btn:hover{transform:translateY(-2px)!important}
+.hero .actions .gold:hover{box-shadow:0 10px 25px rgba(0,0,0,.18)!important;filter:brightness(.94)}
+.hero .actions .ghost:hover{background:#fff!important;color:#222!important}
+.roomsLead{line-height:1.9}
+.inquiry{background:#0e0f0e;color:#f4f0e8;padding:100px 6vw;display:grid;grid-template-columns:.9fr 1.1fr;gap:7vw;align-items:start}
+.goldKicker{color:#c9a55f!important;font-weight:700}
+.inquiry h2,.locationSection h2{font-size:clamp(46px,5vw,72px);line-height:1.05;margin:22px 0 28px}
+.inquiryIntro>p,.locationCopy>p{color:#aaa8a2;line-height:1.75;font-size:16px;max-width:560px}
+.contactLines{margin-top:45px;max-width:530px}.contactLines div{padding:20px 0;border-bottom:1px solid #292a29}.contactLines span{display:block;font-size:10px;letter-spacing:.14em;color:#777;margin-bottom:7px}.contactLines strong{font-size:16px}
+.inquiryForm{background:#171817;border:1px solid #2c2d2c;border-radius:16px;padding:38px;display:grid;grid-template-columns:1fr 1fr;gap:20px 16px}
+.inquiryForm label{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:#777;font-weight:700}.inquiryForm .full{grid-column:1/-1}.inquiryForm input,.inquiryForm textarea{display:block;width:100%;margin-top:9px;border:1px solid #292a29;background:#0c0d0c;color:#eee;border-radius:8px;padding:15px 16px;font:15px Arial,sans-serif;outline:none;transition:border-color .25s,box-shadow .25s}.inquiryForm input:focus,.inquiryForm textarea:focus{border-color:#b89a62;box-shadow:0 0 0 3px rgba(184,154,98,.09)}.inquiryForm textarea{min-height:110px;resize:vertical}.consent{display:flex!important;align-items:center;gap:10px;text-transform:none!important;letter-spacing:0!important;font-weight:400!important}.consent input{width:auto!important;margin:0!important}.submitBtn{border:0;border-radius:30px;background:#c9a55f;color:#111;padding:17px 25px;font-size:15px;cursor:pointer;transition:transform .25s,filter .25s}.submitBtn:hover{transform:translateY(-2px);filter:brightness(1.07)}.formNote{text-align:center;color:#666;font-size:11px}
+.locationSection{background:#0b0c0b;color:#f4f0e8;padding:95px 6vw 110px;display:grid;grid-template-columns:.78fr 1.22fr;gap:7vw;border-top:1px solid #222}.addressCard{margin:28px 0 25px;padding:25px;border:1px solid #303130;border-left:3px solid #c9a55f;border-radius:8px;max-width:370px;background:#151615}.addressCard strong{color:#d4b775;font-size:20px}.addressCard p{color:#ccc;line-height:1.65}.mapBtn{display:inline-flex;border:1px solid #555;border-radius:28px;padding:14px 22px;font-weight:600;font-size:13px;transition:.3s}.mapBtn:hover{border-color:#c9a55f;color:#d4b775;transform:translateY(-2px)}
+.mapMock{min-height:500px;border-radius:14px;position:relative;overflow:hidden;background:linear-gradient(rgba(20,22,20,.48),rgba(20,22,20,.48)),radial-gradient(circle at 65% 45%,#6f776c 0 2%,transparent 2.4%),linear-gradient(32deg,#4c5449 12%,#74796e 12% 14%,#4b5148 14% 35%,#83877b 35% 38%,#535a50 38% 60%,#777d70 60% 62%,#4b5148 62%);box-shadow:0 18px 40px rgba(0,0,0,.25)}.mapMock:before,.mapMock:after{content:"";position:absolute;background:rgba(215,210,195,.35);height:5px;width:120%;left:-10%;top:48%;transform:rotate(-12deg)}.mapMock:after{top:63%;transform:rotate(19deg);height:3px}.mapPin{position:absolute;left:58%;top:45%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50% 50% 50% 0;background:#c9a55f;color:#111;display:grid;place-items:center;font:bold 11px Arial;transform:rotate(-45deg);box-shadow:0 8px 20px rgba(0,0,0,.35)}.mapPin::first-line{transform:rotate(45deg)}.mapLabel{position:absolute;left:61%;top:42%;background:#151615;padding:13px 16px;border-radius:7px;display:flex;flex-direction:column;box-shadow:0 10px 25px rgba(0,0,0,.35)}.mapLabel span{color:#999;font-size:11px;margin-top:4px}
+.siteFooter{background:#070807;color:#aaa;padding:75px 6vw 30px;display:grid;grid-template-columns:1.5fr .65fr .9fr;gap:8vw;font-size:14px;letter-spacing:0;text-transform:none;border-top:1px solid #1d1e1d}.footerLogo{color:#c9a55f;font-size:42px;letter-spacing:.22em}.footerClaim{color:#c9a55f;font-size:10px;letter-spacing:.2em;margin-top:8px}.footerBrand p{max-width:390px;line-height:1.7;margin-top:30px}.siteFooter h4{color:#eee;font-size:13px;margin:0 0 23px}.siteFooter>div:not(.footerBrand):not(.footerBottom) a{display:block;margin:0 0 14px;transition:color .25s}.siteFooter a:hover{color:#c9a55f}.siteFooter p{line-height:1.7}.socials{display:flex;gap:10px;margin-top:20px}.socials a{width:34px;height:34px;border:1px solid #333;border-radius:50%;display:grid!important;place-items:center;margin:0!important}.footerBottom{grid-column:1/-1;border-top:1px solid #1d1e1d;margin-top:20px;padding-top:25px;display:flex;justify-content:space-between;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#666}
+@media(max-width:1120px){.inquiry,.locationSection{grid-template-columns:1fr;padding:75px 6vw}.inquiryForm{padding:25px}.siteFooter{grid-template-columns:1fr 1fr}.footerBrand{grid-column:1/-1}.mapMock{min-height:390px}}
+@media(max-width:600px){.inquiryForm{grid-template-columns:1fr}.inquiryForm label{grid-column:1/-1}.siteFooter{grid-template-columns:1fr}.footerBottom{display:block;line-height:2}.mapMock{min-height:330px}}
+
+
+/* V0.19 — tonal separation: coffee inquiry / white location / black footer */
+.inquiry{background:#8a735e;color:#fffaf3;border-top:0}
+.inquiry .goldKicker{color:#f0d9aa}
+.inquiry h2{color:#fffaf3}
+.inquiryIntro>p{color:#eadfd3}
+.contactLines div{border-bottom-color:rgba(255,255,255,.22)}
+.contactLines span{color:#d8c8b8}
+.contactLines strong{color:#fff}
+.inquiryForm{background:#f3ede5;border:1px solid rgba(58,45,34,.14);box-shadow:0 18px 45px rgba(50,35,25,.14)}
+.inquiryForm label{color:#6e5b49}
+.inquiryForm input,.inquiryForm textarea{background:#fffaf4;color:#2a2723;border-color:#d9cbbb}
+.inquiryForm input::placeholder,.inquiryForm textarea::placeholder{color:#9b8c7d}
+.inquiryForm input:focus,.inquiryForm textarea:focus{border-color:#b89a62;box-shadow:0 0 0 3px rgba(184,154,98,.16)}
+.consent{color:#625446!important}
+.submitBtn{background:#b89a62;color:#fff}
+.formNote{color:#78695b}
+.locationSection{background:#fff;color:var(--text);border-top:0}
+.locationSection .goldKicker{color:#9b7d49}
+.locationCopy>p{color:#706d67}
+.addressCard{background:#f8f6f1;border-color:#dedad1;border-left-color:#b89a62}
+.addressCard strong{color:#9b7d49}
+.addressCard p{color:#595650}
+.mapBtn{border-color:#b8b3aa;color:#2a2a27}
+.mapBtn:hover{border-color:#b89a62;color:#9b7d49}
+.mapMock{box-shadow:0 18px 40px rgba(0,0,0,.12)}
+.siteFooter{background:#070807;color:#aaa;border-top:0}
+
+
+/* V0.20 — cream inquiry / anthracite form / compact footer */
+.inquiry{background:#f5f2eb;color:#292824;border-top:0}
+.inquiry .goldKicker{color:#a98545}
+.inquiry h2{color:#292824}
+.inquiryIntro>p{color:#6f6b63}
+.contactLines div{border-bottom-color:#ddd7cc}
+.contactLines span{color:#9a9287}
+.contactLines strong{color:#292824}
+.inquiryForm{background:#242523;border:1px solid #343532;box-shadow:0 18px 45px rgba(0,0,0,.13)}
+.inquiryForm label{color:#c8c1b6}
+.inquiryForm input,.inquiryForm textarea{background:#171816;color:#f7f3eb;border-color:#3b3c39}
+.inquiryForm input::placeholder,.inquiryForm textarea::placeholder{color:#777873}
+.inquiryForm input:focus,.inquiryForm textarea:focus{border-color:#c5a15e;box-shadow:0 0 0 3px rgba(197,161,94,.14)}
+.consent{color:#aaa59c!important}.formNote{color:#85827c}
+.submitBtn{background:#c5a15e;color:#111}
+.siteFooter{padding:34px 6vw 16px;gap:7vw;align-items:start}
+.footerLogo{font-size:34px}.footerClaim{margin-top:4px}.footerBrand p{margin-top:15px;line-height:1.55}
+.siteFooter h4{margin-bottom:13px}.siteFooter>div:not(.footerBrand):not(.footerBottom) a{margin-bottom:8px}
+.socials{margin-top:10px}.socials a{width:30px;height:30px}
+.footerBottom{margin-top:6px;padding-top:13px;align-items:center}
+.designedBy{display:inline-flex;align-items:center;gap:9px;margin-left:auto;margin-right:24px;color:#666;text-transform:none;letter-spacing:.03em}
+.designedBy .jlLogo{display:inline-flex;align-items:center;gap:6px;color:#9b7d49;font-weight:700;letter-spacing:.12em}
+.designedBy .jlMark{width:24px;height:24px;border:1px solid #9b7d49;border-radius:50%;display:grid;place-items:center;font-size:8px;line-height:1;color:#c5a15e}
+@media(max-width:600px){.siteFooter{padding-top:28px}.designedBy{margin:8px 0;display:flex}}
+
+
+
+
+
+/* V0.33 — CSS-only mobile navigation; works even in iOS local HTML preview */
+.mobile-head-controls{display:none}
+@media(max-width:768px){
+  .main-nav{
+    height:92px!important; min-height:92px!important; padding:0 5vw!important;
+    display:flex!important; align-items:center!important; justify-content:space-between!important;
+    background:#fff!important; position:relative!important; z-index:5000!important;
+  }
+  .main-nav .brand{font-size:38px!important;line-height:.9!important}
+  .main-nav .brand small{font-size:8px!important;letter-spacing:.14em!important;margin-top:8px!important}
+  .desktop-links{display:none!important}
+  .mobile-head-controls{display:flex!important;align-items:center!important;gap:13px!important;margin-left:auto!important}
+  .mobile-langs{display:flex!important;gap:7px!important;align-items:center!important}
+  .mobile-langs span{
+    font:600 9px Arial,Helvetica,sans-serif!important;letter-spacing:.06em!important;
+    color:#aaa!important
+  }
+  .mobile-langs .active{color:#a6844e!important}
+  .menu-check{position:absolute!important;opacity:0!important;pointer-events:none!important}
+  .hamburger{
+    width:42px!important;height:42px!important;display:flex!important;flex-direction:column!important;
+    justify-content:center!important;align-items:center!important;gap:5px!important;cursor:pointer!important;
+  }
+  .hamburger span{width:24px!important;height:2px!important;background:#242625!important;display:block!important;transition:.22s ease!important}
+  .menu-check:checked + .hamburger span:nth-child(1){transform:translateY(7px) rotate(45deg)!important}
+  .menu-check:checked + .hamburger span:nth-child(2){opacity:0!important}
+  .menu-check:checked + .hamburger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)!important}
+  .mobile-menu{
+    display:none!important;position:fixed!important;top:92px!important;left:0!important;right:0!important;bottom:0!important;
+    background:#f8f6f1!important;padding:24px 7vw 30px!important;overflow:auto!important;z-index:4999!important;
+  }
+  .menu-check:checked ~ .mobile-menu{display:flex!important;flex-direction:column!important}
+  .mobile-menu>a{
+    display:block!important;font-family:Georgia,serif!important;font-size:28px!important;line-height:1!important;
+    color:#242625!important;text-decoration:none!important;padding:12px 0!important;border-bottom:1px solid #ddd8ce!important;
+  }
+  .mobile-menu .mobile-poptavka{
+    margin-top:18px!important;padding:15px!important;border:1px solid #b89a62!important;
+    font:600 11px Arial,Helvetica,sans-serif!important;letter-spacing:.08em!important;text-transform:uppercase!important;
+    color:#8c7040!important
+  }
+  .menu-lang-row{margin-top:auto!important;padding-top:30px!important;display:flex!important;gap:24px!important;
+    font:600 12px Arial,Helvetica,sans-serif!important;letter-spacing:.1em!important}
+  .menu-lang-row b{color:#a6844e!important}.menu-lang-row span{color:#999!important}
+
+  /* Same-size hero CTAs */
+  .hero .actions,.hero .hero-actions,.hero .buttons,.hero .cta-row{display:grid!important;grid-template-columns:1fr 1fr!important;gap:8px!important;width:100%!important}
+  .hero .actions a,.hero .hero-actions a,.hero .buttons a,.hero .cta-row a,.hero a.btn{
+    width:100%!important;min-width:0!important;height:48px!important;min-height:48px!important;padding:0 10px!important;
+    display:flex!important;align-items:center!important;justify-content:center!important;font-size:12px!important
+  }
+
+  /* Intro image sequence */
+  .collage,.photo-collage,.intro-grid,.about-grid,.story-grid,.cottage-grid{
+    display:flex!important;flex-direction:column!important;gap:10px!important
+  }
+  .collage img,.photo-collage img,.intro-grid img,.about-grid img,.story-grid img,.cottage-grid img{
+    width:100%!important;height:auto!important;aspect-ratio:4/3!important;object-fit:cover!important
+  }
+}
+
+
+
+
+/* V59 — clean header breakpoint + stable hero transition */
+@media (min-width:1100px){
+  .main-nav{
+    height:82px !important;
+    min-height:82px !important;
+    padding:0 5vw !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+  }
+  .main-nav .desktop-links{
+    display:flex !important;
+    align-items:center !important;
+  }
+  .main-nav .mobile-head-controls{
+    display:none !important;
+  }
+}
+
+@media (max-width:1099.98px){
+  .main-nav{
+    height:92px !important;
+    min-height:92px !important;
+    padding:0 5vw !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    background:#fff !important;
+    position:relative !important;
+    z-index:5000 !important;
+  }
+  .main-nav .desktop-links{
+    display:none !important;
+  }
+  .main-nav .mobile-head-controls{
+    display:flex !important;
+    align-items:center !important;
+    gap:13px !important;
+    margin-left:auto !important;
+  }
+  .mobile-langs{
+    display:flex !important;
+    gap:7px !important;
+    align-items:center !important;
+  }
+  .mobile-langs span{
+    font:600 9px Arial,Helvetica,sans-serif !important;
+    letter-spacing:.06em !important;
+    color:#aaa !important;
+  }
+  .mobile-langs .active{color:#a6844e !important}
+  .menu-check{
+    position:absolute !important;
+    opacity:0 !important;
+    pointer-events:none !important;
+  }
+  .hamburger{
+    width:42px !important;
+    height:42px !important;
+    display:flex !important;
+    flex-direction:column !important;
+    justify-content:center !important;
+    align-items:center !important;
+    gap:5px !important;
+    cursor:pointer !important;
+  }
+  .hamburger span{
+    width:24px !important;
+    height:2px !important;
+    background:#242625 !important;
+    display:block !important;
+    transition:.22s ease !important;
+  }
+  .menu-check:checked + .hamburger span:nth-child(1){transform:translateY(7px) rotate(45deg) !important}
+  .menu-check:checked + .hamburger span:nth-child(2){opacity:0 !important}
+  .menu-check:checked + .hamburger span:nth-child(3){transform:translateY(-7px) rotate(-45deg) !important}
+  .mobile-menu{
+    display:none !important;
+    position:fixed !important;
+    top:92px !important;
+    left:0 !important;
+    right:0 !important;
+    bottom:0 !important;
+    background:#f8f6f1 !important;
+    padding:24px 7vw 30px !important;
+    overflow:auto !important;
+    z-index:4999 !important;
+  }
+  .menu-check:checked ~ .mobile-menu{
+    display:flex !important;
+    flex-direction:column !important;
+  }
+
+  /* Hero keeps a deliberate composition through the tablet / narrow-desktop range. */
+  .hero{
+    height:calc(100svh - 92px) !important;
+    min-height:600px !important;
+    background-position:center center !important;
+  }
+  .heroText{
+    left:6vw !important;
+    top:44% !important;
+    width:min(660px,72vw) !important;
+    max-width:660px !important;
+  }
+  .heroText h1{
+    font-size:clamp(50px,7.2vw,78px) !important;
+    line-height:.98 !important;
+  }
+  .heroText p{
+    font-size:clamp(18px,2.35vw,25px) !important;
+    max-width:520px !important;
+  }
+  .heroBenefits{
+    left:6vw !important;
+    right:6vw !important;
+    bottom:26px !important;
+    gap:22px !important;
+    flex-wrap:wrap !important;
+  }
+}
+
+@media (max-width:768px){
+  .hero{
+    min-height:620px !important;
+  }
+  .heroText{
+    width:88vw !important;
+    top:43% !important;
+  }
+  .heroText h1{
+    font-size:clamp(45px,12vw,66px) !important;
+  }
+  .heroText p{
+    font-size:clamp(17px,4.6vw,22px) !important;
+  }
+}
+
+@media (max-width:520px){
+  .main-nav .brand{font-size:34px !important}
+  .mobile-head-controls{gap:7px !important}
+  .hero{
+    min-height:610px !important;
+  }
+  .heroText{
+    left:5vw !important;
+    width:90vw !important;
+    top:42% !important;
+  }
+  .heroText h1{
+    font-size:clamp(42px,12.8vw,58px) !important;
+  }
+  .heroBenefits{
+    left:5vw !important;
+    right:5vw !important;
+    bottom:20px !important;
+  }
+}
+
+
+
+/* V60 — room cards: one emotional line, keeping the overview airy */
+.room-story{
+  margin:7px 0 8px;
+  max-width:92%;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:12px;
+  line-height:1.45;
+  font-weight:400;
+  color:#77736b;
+}
+@media (max-width:900px){
+  .room-story{
+    font-size:13px;
+    max-width:100%;
+    margin-top:6px;
+  }
+}
+
+
+
+.lena-equipment{
+  background:#fff;
+  color:#242625;
+  padding:105px 5vw 92px;
+}
+.equipment-inner{max-width:1500px;margin:0 auto}
+.equipment-head{
+  display:grid;
+  grid-template-columns:minmax(0,1.1fr) minmax(280px,.65fr);
+  gap:8vw;
+  align-items:end;
+  margin-bottom:62px;
+}
+.equipment-head .section-kicker{
+  font:700 10px/1 Arial,Helvetica,sans-serif;
+  letter-spacing:.26em;
+  color:#b89a62;
+  margin-bottom:24px;
+}
+.equipment-head h2{
+  margin:0;
+  font-family:Georgia,serif;
+  font-size:clamp(42px,4.1vw,68px);
+  line-height:1.02;
+  font-weight:400;
+  letter-spacing:-.025em;
+}
+.equipment-head h2 em{font-weight:400;color:#8c877e}
+.equipment-head > p{
+  margin:0 0 7px;
+  max-width:500px;
+  font:400 15px/1.65 Arial,Helvetica,sans-serif;
+  color:#77736b;
+}
+.equipment-highlights{
+  display:grid;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  border-top:1px solid #ddd8ce;
+  border-bottom:1px solid #ddd8ce;
+}
+.equipment-item{
+  min-height:126px;
+  padding:26px 22px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:14px;
+  border-right:1px solid #e5e0d7;
+}
+.equipment-item:last-child{border-right:0}
+.eq-icon{
+  color:#b89a62;
+  font-family:Georgia,serif;
+  font-size:22px;
+  line-height:1;
+}
+.equipment-item strong{
+  font:600 14px/1.35 Arial,Helvetica,sans-serif;
+  color:#383834;
+}
+.equipment-details{margin-top:28px}
+.equipment-details summary{
+  width:max-content;
+  list-style:none;
+  cursor:pointer;
+  font:700 10px/1.2 Arial,Helvetica,sans-serif;
+  letter-spacing:.16em;
+  color:#9b7a43;
+  padding:10px 0;
+}
+.equipment-details summary::-webkit-details-marker{display:none}
+.equipment-details summary span{display:inline-block;margin-left:7px;transition:transform .2s ease}
+.equipment-details[open] summary span{transform:rotate(180deg)}
+.equipment-detail-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:44px;
+  padding:38px 0 8px;
+  border-top:1px solid #ece8df;
+  margin-top:12px;
+}
+.equipment-detail-grid h3{
+  margin:0 0 12px;
+  font:400 22px/1.2 Georgia,serif;
+}
+.equipment-detail-grid p{
+  margin:0;
+  font:400 13px/1.7 Arial,Helvetica,sans-serif;
+  color:#77736b;
+}
+@media(max-width:1099px){
+  .lena-equipment{padding:82px 6vw 76px}
+  .equipment-head{grid-template-columns:1fr;gap:25px;margin-bottom:45px}
+  .equipment-highlights{grid-template-columns:repeat(3,1fr)}
+  .equipment-item:nth-child(3){border-right:0}
+  .equipment-item:nth-child(-n+3){border-bottom:1px solid #e5e0d7}
+  .equipment-detail-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:620px){
+  .lena-equipment{padding:68px 6vw 62px}
+  .equipment-head h2{font-size:42px}
+  .equipment-highlights{grid-template-columns:repeat(2,1fr)}
+  .equipment-item{min-height:105px;padding:20px 14px}
+  .equipment-item:nth-child(3){border-right:1px solid #e5e0d7}
+  .equipment-item:nth-child(2n){border-right:0}
+  .equipment-item:nth-child(-n+4){border-bottom:1px solid #e5e0d7}
+  .equipment-detail-grid{grid-template-columns:1fr;gap:28px}
+}
+
+
+
+.equipment-v62{
+  background:#f8f6f1 !important;
+  color:#242625;
+  padding:96px 5vw 84px !important;
+}
+.equipment-v62 .equipment-inner{max-width:1500px;margin:0 auto}
+.equipment-head-v62{text-align:center;margin:0 auto 58px}
+.equipment-head-v62 .section-kicker{
+  font:700 10px/1 Arial,Helvetica,sans-serif;
+  letter-spacing:.28em;color:#b89a62;margin-bottom:24px
+}
+.equipment-head-v62 h2{
+  margin:0;font:400 clamp(42px,4.3vw,68px)/1.02 Georgia,serif;
+  letter-spacing:-.025em
+}
+.equipment-head-v62 h2 em{font-weight:400;color:#969086}
+.equipment-highlights-v62{
+  display:grid;grid-template-columns:repeat(7,minmax(0,1fr));
+  border-top:1px solid #dcd5c9;border-bottom:1px solid #dcd5c9
+}
+.equipment-item-v62{
+  min-height:188px;padding:30px 18px;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;gap:22px;
+  border-right:1px solid #ddd7cc
+}
+.equipment-item-v62:last-child{border-right:0}
+.equipment-item-v62 svg{
+  width:47px;height:47px;fill:none;stroke:#b08d51;stroke-width:1.8;
+  stroke-linecap:round;stroke-linejoin:round
+}
+.equipment-item-v62 strong{
+  font:400 17px/1.35 Georgia,serif;color:#2d2d29
+}
+.equipment-details-v62{text-align:center;margin-top:34px}
+.equipment-details-v62 summary{
+  display:inline-flex;align-items:center;justify-content:center;gap:12px;
+  list-style:none;cursor:pointer;border:1px solid #b89a62;
+  padding:17px 27px;font:700 10px/1 Arial,Helvetica,sans-serif;
+  letter-spacing:.17em;color:#9b7a43
+}
+.equipment-details-v62 summary::-webkit-details-marker{display:none}
+.equipment-details-v62 summary span{transition:transform .2s ease}
+.equipment-details-v62[open] summary span{transform:rotate(180deg)}
+.equipment-detail-grid-v62{
+  text-align:left;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:42px;margin-top:40px;padding-top:36px;border-top:1px solid #ddd7cc
+}
+.equipment-detail-grid-v62 h3{margin:0 0 11px;font:400 21px/1.2 Georgia,serif}
+.equipment-detail-grid-v62 p{margin:0;font:400 13px/1.7 Arial,Helvetica,sans-serif;color:#77736b}
+@media(max-width:1099px){
+  .equipment-v62{padding:78px 6vw 70px !important}
+  .equipment-highlights-v62{grid-template-columns:repeat(4,1fr)}
+  .equipment-item-v62{min-height:155px}
+  .equipment-item-v62:nth-child(4){border-right:0}
+  .equipment-item-v62:nth-child(-n+4){border-bottom:1px solid #ddd7cc}
+  .equipment-detail-grid-v62{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:650px){
+  .equipment-v62{padding:64px 6vw 58px !important}
+  .equipment-head-v62{margin-bottom:42px}
+  .equipment-head-v62 h2{font-size:40px}
+  .equipment-highlights-v62{grid-template-columns:repeat(2,1fr)}
+  .equipment-item-v62{min-height:132px;padding:22px 10px;gap:15px}
+  .equipment-item-v62:nth-child(4){border-right:0}
+  .equipment-item-v62:nth-child(odd){border-right:1px solid #ddd7cc}
+  .equipment-item-v62:nth-child(even){border-right:0}
+  .equipment-item-v62:nth-child(-n+6){border-bottom:1px solid #ddd7cc}
+  .equipment-item-v62:last-child{grid-column:1/-1;border-right:0}
+  .equipment-item-v62 strong{font-size:15px}
+  .equipment-item-v62 svg{width:40px;height:40px}
+  .equipment-detail-grid-v62{grid-template-columns:1fr;gap:26px}
+  .equipment-details-v62 summary{width:100%;box-sizing:border-box}
+}
+
+
+
+.lena-for-whom-v63{background:#fff!important;color:#242625;padding:96px 5vw 92px!important}
+.for-whom-inner-v63{max-width:1500px;margin:0 auto}
+.for-whom-head-v63{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(300px,.7fr);gap:8vw;align-items:end;margin-bottom:58px}
+.for-whom-head-v63 .section-kicker{font:700 10px/1 Arial,Helvetica,sans-serif;letter-spacing:.26em;color:#9b958b;margin-bottom:20px}
+.for-whom-head-v63 h2{margin:0;font:400 clamp(44px,4.3vw,70px)/.98 Georgia,serif;letter-spacing:-.025em;color:#242625}
+.for-whom-head-v63>p{margin:0 0 8px;max-width:520px;font:400 15px/1.65 Arial,Helvetica,sans-serif;color:#77736b}
+.for-whom-grid-v63{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid #ddd8ce}
+.for-whom-item-v63{min-height:165px;padding:30px 20px 28px;border-right:1px solid #e1ddd5}
+.for-whom-item-v63:last-child{border-right:0}
+.for-whom-item-v63 svg{width:32px;height:32px;fill:none;stroke:#b08d51;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round;margin-bottom:18px}
+.for-whom-item-v63 h3{margin:0 0 9px;font:400 20px/1.2 Georgia,serif;color:#2d2d29}
+.for-whom-item-v63 p{margin:0;max-width:300px;font:400 12px/1.55 Arial,Helvetica,sans-serif;color:#77736b}
+@media(max-width:1099px){.lena-for-whom-v63{padding:78px 6vw 72px!important}.for-whom-head-v63{grid-template-columns:1fr;gap:24px;margin-bottom:44px}.for-whom-grid-v63{grid-template-columns:repeat(2,1fr)}.for-whom-item-v63:nth-child(2){border-right:0}.for-whom-item-v63:nth-child(-n+2){border-bottom:1px solid #e1ddd5}}
+@media(max-width:620px){.lena-for-whom-v63{padding:64px 6vw 58px!important}.for-whom-head-v63 h2{font-size:43px}.for-whom-grid-v63{grid-template-columns:1fr}.for-whom-item-v63{min-height:0;padding:25px 4px;border-right:0!important;border-bottom:1px solid #e1ddd5}.for-whom-item-v63:last-child{border-bottom:0}}
+
+
+
+@media(min-width:1100px){.for-whom-grid-v63{grid-template-columns:repeat(5,minmax(0,1fr))!important}.for-whom-item-v63{padding-left:18px!important;padding-right:18px!important}}
+@media(min-width:621px) and (max-width:1099px){.for-whom-grid-v63{grid-template-columns:repeat(2,1fr)!important}.for-whom-item-v63:nth-child(2n){border-right:0!important}.for-whom-item-v63:nth-child(-n+4){border-bottom:1px solid #e1ddd5!important}.for-whom-item-v63:nth-child(5){grid-column:1/-1;border-right:0!important}}
+
+
+
+.quickStats, .quick-stats, .stats, .intro-stats{
+  grid-template-columns:repeat(5,minmax(0,1fr))!important;
+}
+
+
+
+.quick.quick-hospitality{
+  display:grid!important;
+  grid-template-columns:repeat(5,minmax(0,1fr))!important;
+}
+.quick.quick-hospitality>div{
+  width:auto!important;
+  min-width:0!important;
+}
+@media(max-width:700px){
+  .quick.quick-hospitality{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+  .quick.quick-hospitality>div:last-child{
+    grid-column:1/-1;
+  }
+}
+
+
+
+.quick.quick-hospitality{
+  grid-template-columns:repeat(6,minmax(0,1fr))!important;
+}
+@media(max-width:700px){
+  .quick.quick-hospitality{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+  .quick.quick-hospitality>div:last-child{
+    grid-column:auto!important;
+  }
+}
+
+
+
+.footer-v74{
+  background:#070807!important;
+  color:#eeeae1!important;
+  padding:0 5.8vw!important;
+  margin:0!important;
+  display:block!important;
+}
+.footer-v74-main{
+  max-width:1680px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1.35fr .72fr 1fr;
+  gap:7vw;
+  padding:52px 0 42px;
+  align-items:start;
+}
+.footer-v74-lena{
+  font:400 44px/1 Georgia,serif;
+  letter-spacing:.08em;
+  color:#c5a15e;
+  margin:0 0 11px;
+}
+.footer-v74-claim{
+  color:#c5a15e;
+  font:600 9px/1.55 Arial,Helvetica,sans-serif;
+  letter-spacing:.22em;
+}
+.footer-v74-main h4{
+  margin:2px 0 18px!important;
+  color:#c5a15e!important;
+  font:700 9px/1 Arial,Helvetica,sans-serif!important;
+  letter-spacing:.18em!important;
+}
+.footer-v74-nav,
+.footer-v74-contact{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+}
+.footer-v74-nav a,
+.footer-v74-contact a{
+  color:#f0ede7!important;
+  text-decoration:none!important;
+  font:400 12px/1.35 Arial,Helvetica,sans-serif!important;
+  margin:0 0 7px!important;
+}
+.footer-v74-nav a:hover,
+.footer-v74-contact a:hover{color:#c5a15e!important}
+.footer-v74-contact p{
+  color:#8d8f8b!important;
+  font:400 11px/1.55 Arial,Helvetica,sans-serif!important;
+  margin:13px 0 0!important;
+}
+.footer-v74-socials{
+  display:flex;
+  gap:20px;
+  align-items:center;
+  margin-top:27px;
+}
+.footer-v74-socials a{
+  width:29px;height:29px;
+  display:flex;align-items:center;justify-content:center;
+  color:#f1eee8!important;
+}
+.footer-v74-socials svg{
+  width:27px;height:27px;
+  fill:currentColor;stroke:currentColor;
+}
+.footer-v74-socials a:nth-child(2) svg{
+  fill:none;stroke-width:1.55;
+}
+.footer-v74-socials a:hover{color:#c5a15e!important}
+.footer-v74-bottom{
+  max-width:1680px;
+  margin:0 auto;
+  border-top:1px solid rgba(255,255,255,.11);
+  min-height:48px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  color:#666965;
+  font:400 8px/1 Arial,Helvetica,sans-serif;
+  letter-spacing:.08em;
+}
+.footer-v74-designed{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  white-space:nowrap;
+}
+.footer-v74-designed img{
+  display:block!important;
+  width:27px!important;
+  height:27px!important;
+  object-fit:contain!important;
+  filter:none!important;
+}
+@media(max-width:850px){
+  .footer-v74{padding:0 6vw!important}
+  .footer-v74-main{
+    grid-template-columns:1fr 1fr;
+    gap:40px 8vw;
+    padding:44px 0 38px;
+  }
+  .footer-v74-brand{grid-column:1/-1}
+}
+@media(max-width:520px){
+  .footer-v74-main{grid-template-columns:1fr;gap:34px}
+  .footer-v74-brand{grid-column:auto}
+  .footer-v74-bottom{
+    padding:15px 0;
+    min-height:0;
+    gap:12px;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
+
+
+
+/* V75 – airy refinement of the approved V74 footer */
+.footer-v74-main{
+  grid-template-columns:1.35fr .72fr 1fr!important;
+  gap:8vw!important;
+  padding:66px 0 58px!important;
+}
+.footer-v74-lena{
+  font-size:52px!important;
+  margin-bottom:14px!important;
+}
+.footer-v74-claim{
+  font-size:10px!important;
+  line-height:1.65!important;
+  letter-spacing:.24em!important;
+}
+.footer-v74-main h4{
+  font-size:10px!important;
+  margin-bottom:23px!important;
+  letter-spacing:.22em!important;
+}
+.footer-v74-nav a,
+.footer-v74-contact a{
+  font-size:14px!important;
+  line-height:1.45!important;
+  margin-bottom:10px!important;
+}
+.footer-v74-contact p{
+  font-size:12px!important;
+  line-height:1.7!important;
+  margin-top:18px!important;
+}
+.footer-v74-socials{
+  margin-top:31px!important;
+  gap:23px!important;
+}
+.footer-v74-socials a{
+  width:31px!important;
+  height:31px!important;
+}
+.footer-v74-socials svg{
+  width:29px!important;
+  height:29px!important;
+}
+.footer-v74-bottom{
+  min-height:58px!important;
+}
+.footer-v74-designed img{
+  width:30px!important;
+  height:30px!important;
+}
+@media(max-width:850px){
+  .footer-v74-main{
+    padding:52px 0 46px!important;
+    gap:44px 9vw!important;
+  }
+}
+@media(max-width:520px){
+  .footer-v74-main{
+    padding:46px 0 40px!important;
+    gap:38px!important;
+  }
+  .footer-v74-nav a,
+  .footer-v74-contact a{
+    font-size:14px!important;
+  }
+}
+
+
+
+.for-whom-item-v63 > svg{
+  width:30px!important;height:30px!important;
+  fill:none!important;stroke:#b89a62!important;
+  stroke-width:1.55!important;stroke-linecap:round!important;
+  stroke-linejoin:round!important;overflow:visible!important;
+}
+
+
+
+.hero-benefit-v77{display:inline-flex!important;align-items:center!important;gap:11px!important}
+.hero-benefit-v77 svg{width:21px!important;height:21px!important;fill:none!important;stroke:#d2ad63!important;stroke-width:1.55!important;stroke-linecap:round!important;stroke-linejoin:round!important;flex:none!important}
+.for-whom-item-v63>svg{width:31px!important;height:31px!important;fill:none!important;stroke:#b89a62!important;stroke-width:1.45!important;stroke-linecap:round!important;stroke-linejoin:round!important}
+
+
+
+/* HERO: pictograms need maximum contrast over photography */
+.hero-benefit-v77 svg{
+  width:23px!important;
+  height:23px!important;
+  stroke:#fff!important;
+  stroke-width:1.65!important;
+  opacity:1!important;
+}
+
+/* Equipment garden: same thin gold language as the rest */
+.lena-equipment-v61 svg{
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+/* FOOTER: slightly stronger section headings + more breathing room */
+.footer-v74-main h4{
+  font-size:11.5px!important;
+  line-height:1.1!important;
+  letter-spacing:.22em!important;
+  margin-bottom:28px!important;
+}
+
+
+.pobyt-story-v79{margin-top:14px!important;max-width:760px;}
+
+
+/* V0.32 — centered mobile hero */
+@media (max-width:1120px){
+  .hero .actions{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:10px!important;
+    width:100%!important;
+  }
+  .hero .actions .btn{
+    width:100%!important;min-width:0!important;height:52px!important;min-height:52px!important;
+    padding:0 10px!important;display:flex!important;align-items:center!important;
+    justify-content:center!important;text-align:center!important;line-height:1.1!important;
+    white-space:nowrap!important;
+  }
+  .hero .facts{
+    width:100%!important;
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:18px 12px!important;
+    justify-items:center!important;
+    align-items:center!important;
+  }
+  .hero .facts > div{
+    width:100%!important;margin:0!important;
+    display:flex!important;align-items:center!important;justify-content:center!important;
+    text-align:center!important;gap:9px!important;
+  }
+}
+@media(max-width:390px){
+  .hero .actions .btn{font-size:11px!important;padding:0 6px!important}
+}
+
+
+
+/* V0.33 — agreed mobile corrections */
+@media (max-width:1120px){
+
+  /* Longer location line above hero title */
+  .hero .kicker{
+    font-size:10px!important;
+    letter-spacing:.13em!important;
+    line-height:1.45!important;
+    white-space:normal!important;
+    max-width:100%!important;
+  }
+
+  /* CTA buttons: same geometry and genuinely centered */
+  .hero .actions{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:10px!important;
+    width:100%!important;
+  }
+  .hero .actions .btn{
+    width:100%!important;
+    min-width:0!important;
+    height:52px!important;
+    min-height:52px!important;
+    padding:0 8px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    text-align:center!important;
+    line-height:1.1!important;
+    white-space:nowrap!important;
+  }
+
+  /* Hero facts: centered 2 x 2 instead of inherited desktop flow */
+  .hero .facts{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    width:100%!important;
+    gap:18px 10px!important;
+    align-items:center!important;
+    justify-items:stretch!important;
+  }
+  .hero .facts .fact{
+    width:100%!important;
+    margin:0!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    text-align:center!important;
+    gap:9px!important;
+  }
+
+  /* Intro collage: cancel desktop fixed heights causing the large white gap */
+  .intro .collage{
+    display:flex!important;
+    flex-direction:column!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    gap:10px!important;
+  }
+  .intro .collage > img,
+  .intro .collage .main,
+  .intro .collage .big{
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    aspect-ratio:4/3!important;
+    object-fit:cover!important;
+  }
+  .intro .collage .mini{
+    display:flex!important;
+    flex-direction:column!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    gap:10px!important;
+  }
+  .intro .collage .mini img{
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    aspect-ratio:4/3!important;
+    object-fit:cover!important;
+  }
+  .intro{
+    height:auto!important;
+    min-height:0!important;
+  }
+}
+
+@media(max-width:390px){
+  .hero .actions .btn{font-size:11px!important}
+  .hero .kicker{font-size:9px!important;letter-spacing:.1em!important}
+}
+
+
+
+/* V0.35 — desktop header/navigation repair */
+@media (min-width:1121px){
+  .lena-nav{
+    height:82px!important;
+    min-height:82px!important;
+    padding:0 6vw!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+    background:#fff!important;
+    position:relative!important;
+    z-index:100!important;
+  }
+  .lena-nav .brand{
+    display:block!important;
+    flex:0 0 auto!important;
+    color:#b89a62!important;
+    text-decoration:none!important;
+    font-family:Georgia,serif!important;
+    font-size:34px!important;
+    line-height:.9!important;
+    letter-spacing:.20em!important;
+  }
+  .lena-nav .brand small{
+    display:block!important;
+    margin-top:8px!important;
+    color:#6f6f69!important;
+    font-family:Arial,Helvetica,sans-serif!important;
+    font-size:8px!important;
+    font-weight:400!important;
+    line-height:1!important;
+    letter-spacing:.15em!important;
+    white-space:nowrap!important;
+  }
+  .lena-desktop-nav{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:flex-end!important;
+    gap:24px!important;
+    margin-left:auto!important;
+  }
+  .lena-desktop-nav > a{
+    display:inline-flex!important;
+    align-items:center!important;
+    min-height:44px!important;
+    color:#242625!important;
+    text-decoration:none!important;
+    font-family:Arial,Helvetica,sans-serif!important;
+    font-size:13px!important;
+    font-weight:500!important;
+    line-height:1!important;
+    white-space:nowrap!important;
+  }
+  .lena-desktop-nav .navcta{
+    min-height:46px!important;
+    padding:0 20px!important;
+    border:1px solid #b89a62!important;
+    color:#9a7b45!important;
+    font-size:11px!important;
+    letter-spacing:.06em!important;
+    text-transform:uppercase!important;
+  }
+  .lena-mobile-tools{display:none!important}
+}
+
+
+
+/* V0.36 — verified desktop navigation class fix */
+@media (min-width:1121px){
+  nav.main-nav.lena-nav{
+    height:82px!important;
+    padding:0 5vw!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+    background:#fff!important;
+  }
+  nav.main-nav.lena-nav .brand{
+    display:block!important;
+    margin:0!important;
+    color:#b89a62!important;
+    font:400 38px/1 Georgia,serif!important;
+    letter-spacing:.22em!important;
+  }
+  nav.main-nav.lena-nav .brand small{
+    display:block!important;
+    width:auto!important;
+    margin-top:7px!important;
+    color:#777!important;
+    font:400 8px/1 Arial,sans-serif!important;
+    letter-spacing:.17em!important;
+    white-space:nowrap!important;
+  }
+  .desktop-links.lena-desktop-nav{
+    display:flex!important;
+    flex-direction:row!important;
+    align-items:center!important;
+    justify-content:flex-end!important;
+    gap:28px!important;
+    margin-left:auto!important;
+  }
+  .desktop-links.lena-desktop-nav > a{
+    display:inline-flex!important;
+    align-items:center!important;
+    padding:9px 0!important;
+    color:#242625!important;
+    font:600 14px/1 Arial,sans-serif!important;
+    white-space:nowrap!important;
+  }
+  .desktop-links.lena-desktop-nav > a.navcta{
+    padding:15px 23px!important;
+    border:1px solid #b89a62!important;
+    color:#947746!important;
+    font-size:11px!important;
+    font-weight:500!important;
+    letter-spacing:.06em!important;
+    text-transform:uppercase!important;
+  }
+  .mobile-head-controls{display:none!important}
+}
+
+
+
+/* V0.37 — restore desktop navigation hover interactions */
+@media (min-width:1121px){
+  .desktop-links.lena-desktop-nav > a:not(.navcta){
+    position:relative!important;
+    transition:color .25s ease, transform .25s ease!important;
+  }
+  .desktop-links.lena-desktop-nav > a:not(.navcta)::after{
+    content:""!important;
+    position:absolute!important;
+    left:0!important;
+    bottom:2px!important;
+    width:100%!important;
+    height:1px!important;
+    background:#b89a62!important;
+    transform:scaleX(0)!important;
+    transform-origin:right center!important;
+    transition:transform .28s ease!important;
+  }
+  .desktop-links.lena-desktop-nav > a:not(.navcta):hover{
+    color:#9a7b45!important;
+    transform:translateY(-1px)!important;
+  }
+  .desktop-links.lena-desktop-nav > a:not(.navcta):hover::after{
+    transform:scaleX(1)!important;
+    transform-origin:left center!important;
+  }
+
+  .desktop-links.lena-desktop-nav > a.navcta{
+    transition:background-color .28s ease,color .28s ease,
+               transform .28s ease,box-shadow .28s ease!important;
+  }
+  .desktop-links.lena-desktop-nav > a.navcta:hover{
+    background:#b89a62!important;
+    color:#fff!important;
+    transform:translateY(-2px)!important;
+    box-shadow:0 8px 20px rgba(0,0,0,.08)!important;
+  }
+}
+
+
+
+/* V0.40 — TDJ-style designer signature */
+.designed-by-lena{
+  display:inline-flex!important;
+  align-items:center!important;
+  gap:18px!important;
+  color:#8e918e!important;
+  font-family:Arial,Helvetica,sans-serif!important;
+  font-size:9px!important;
+  font-weight:500!important;
+  letter-spacing:.04em!important;
+  white-space:nowrap!important;
+}
+.designed-by-lena img{
+  display:block!important;
+  width:28px!important;
+  height:28px!important;
+  object-fit:contain!important;
+  opacity:.65!important;
+}
+@media(max-width:1120px){
+  .designed-by-lena{gap:12px!important;font-size:8px!important}
+  .designed-by-lena img{width:25px!important;height:25px!important}
+}
+
+
+
+/* V0.42 — selected Chalupa LENA graphic logo */
+.lena-selected-logo{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  padding:0!important;
+  margin:0!important;
+  overflow:visible!important;
+}
+.lena-selected-logo img{
+  display:block!important;
+  width:205px!important;
+  height:76px!important;
+  object-fit:contain!important;
+  object-position:left center!important;
+}
+.lena-footer-logo img{
+  display:block!important;
+  width:190px!important;
+  max-width:100%!important;
+  height:auto!important;
+  object-fit:contain!important;
+}
+@media(max-width:1120px){
+  .lena-selected-logo img{
+    width:155px!important;
+    height:68px!important;
+  }
+  .lena-footer-logo img{width:165px!important}
+}
+@media(max-width:390px){
+  .lena-selected-logo img{width:142px!important}
+}
+
+
+
+@media(min-width:1121px){nav.main-nav.lena-nav{height:100px!important;min-height:100px!important}.lena-selected-logo.header-logo img{width:285px!important;height:90px!important;max-height:90px!important;object-fit:contain!important;object-position:left center!important}}
+.location-brand-signature{min-height:420px;display:flex;align-items:center;justify-content:center}.location-brand-signature img{display:block;width:min(390px,82%);height:auto;object-fit:contain}
+.footer-text-brand{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:7px!important}.footer-text-brand .footer-lena{font-family:Georgia,serif!important;font-size:34px!important;line-height:1!important;letter-spacing:.22em!important;color:#b89a62!important}.footer-text-brand .footer-sub{font-family:Arial,sans-serif!important;font-size:8px!important;letter-spacing:.17em!important;color:#b89a62!important}
+@media(max-width:1120px){.location-brand-signature{min-height:0;padding:36px 0 10px}.location-brand-signature img{width:min(300px,80vw)}}
+
+
+
+@media(max-width:1120px){
+  #menu-check:not(:checked) ~ .mobile-menu{
+    display:none!important;
+    visibility:hidden!important;
+    opacity:0!important;
+    pointer-events:none!important;
+  }
+  #menu-check:checked ~ .mobile-menu{
+    display:flex!important;
+    visibility:visible!important;
+    opacity:1!important;
+    pointer-events:auto!important;
+  }
+}
+
+
+
+/* V0.49 — open editorial address treatment */
+.addressCard.address-open{
+  position:relative!important;
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  padding:4px 0 4px 28px!important;
+  margin-top:34px!important;
+  min-height:0!important;
+  width:auto!important;
+  max-width:420px!important;
+}
+.addressCard.address-open::before{
+  content:""!important;
+  position:absolute!important;
+  left:0!important;
+  top:2px!important;
+  bottom:2px!important;
+  width:2px!important;
+  background:#b89a62!important;
+}
+.addressCard.address-open strong{
+  display:block!important;
+  margin:0 0 15px!important;
+  color:#a67f43!important;
+  font-family:Georgia,serif!important;
+  font-size:21px!important;
+  font-weight:400!important;
+  line-height:1.2!important;
+}
+.addressCard.address-open .address-lines{
+  color:#3c3c38!important;
+  font-size:15px!important;
+  line-height:1.7!important;
+}
+@media(max-width:1120px){
+  .addressCard.address-open{
+    margin-top:28px!important;
+    padding-left:22px!important;
+  }
+}
+
+
+
+/* V0.50 — rebuilt location/contact composition */
+.location-title-row{
+  display:flex!important;
+  align-items:center!important;
+  gap:34px!important;
+  margin-bottom:24px!important;
+}
+.location-title-row h2{
+  margin:0!important;
+}
+.location-title-logo{
+  flex:0 0 205px!important;
+  width:205px!important;
+}
+.location-title-logo img{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  object-fit:contain!important;
+}
+.location-map-real{
+  width:100%!important;
+  min-height:470px!important;
+  overflow:hidden!important;
+  background:#f5f2eb!important;
+}
+.location-map-real iframe{
+  display:block!important;
+  width:100%!important;
+  height:470px!important;
+  border:0!important;
+  filter:saturate(.72) contrast(.96)!important;
+}
+
+/* Ensure location section uses two balanced columns on desktop. */
+.locationGrid{
+  align-items:stretch!important;
+}
+@media(min-width:1121px){
+  .locationGrid{
+    grid-template-columns:minmax(0,1fr) minmax(520px,.95fr)!important;
+    column-gap:6vw!important;
+  }
+}
+@media(max-width:1120px){
+  .location-title-row{
+    display:block!important;
+    margin-bottom:20px!important;
+  }
+  .location-title-logo{
+    width:180px!important;
+    margin:0 0 24px!important;
+  }
+  .location-map-real{
+    margin-top:36px!important;
+    min-height:330px!important;
+  }
+  .location-map-real iframe{
+    height:330px!important;
+  }
+}
+
+
+
+/* V0.51 — larger logo without increasing the white header band.
+   The small tagline is visually cropped from the source logo and rebuilt beside it. */
+
+/* Header */
+@media(min-width:1121px){
+  nav.main-nav.lena-nav{
+    height:100px!important;
+    min-height:100px!important;
+  }
+  .lena-selected-logo.header-logo{
+    width:245px!important;
+    height:86px!important;
+    overflow:hidden!important;
+    flex:0 0 245px!important;
+  }
+  .lena-selected-logo.header-logo img{
+    width:245px!important;
+    height:auto!important;
+    max-height:none!important;
+    transform:scale(1.18)!important;
+    transform-origin:left top!important;
+    margin-top:-5px!important;
+    clip-path:inset(0 0 18% 0)!important;
+  }
+  .header-brand-claim{
+    margin-left:20px!important;
+    padding-left:22px!important;
+    border-left:1px solid #b89a62!important;
+    color:#9d793f!important;
+    font:500 12px/1.55 Arial,Helvetica,sans-serif!important;
+    letter-spacing:.22em!important;
+    white-space:nowrap!important;
+  }
+}
+
+/* Contact/address */
+.location-title-row{
+  display:block!important;
+}
+.location-title-brand{
+  display:flex!important;
+  align-items:center!important;
+  gap:28px!important;
+  margin-bottom:24px!important;
+}
+.location-title-logo{
+  width:255px!important;
+  height:132px!important;
+  overflow:hidden!important;
+  flex:0 0 255px!important;
+}
+.location-title-logo img{
+  width:255px!important;
+  height:auto!important;
+  transform:scale(1.13)!important;
+  transform-origin:left top!important;
+  clip-path:inset(0 0 17% 0)!important;
+}
+.location-brand-claim{
+  padding-left:28px!important;
+  border-left:2px solid #b89a62!important;
+  color:#a67f43!important;
+  font:500 17px/1.55 Arial,Helvetica,sans-serif!important;
+  letter-spacing:.24em!important;
+  white-space:nowrap!important;
+}
+.location-title-row h2{
+  margin-top:0!important;
+}
+
+@media(max-width:1120px){
+  .header-brand-claim{display:none!important}
+  .location-title-brand{
+    gap:16px!important;
+    align-items:center!important;
+  }
+  .location-title-logo{
+    width:160px!important;
+    height:88px!important;
+    flex-basis:160px!important;
+  }
+  .location-title-logo img{width:160px!important}
+  .location-brand-claim{
+    padding-left:15px!important;
+    font-size:10px!important;
+    letter-spacing:.14em!important;
+    white-space:normal!important;
+  }
+}
+
+
+
+/* V0.52 — refined logo/claim lockup, compact header and address identity */
+
+/* HEADER: compact horizontal brand lockup */
+@media(min-width:1121px){
+  nav.main-nav.lena-nav{
+    height:92px!important;
+    min-height:92px!important;
+    padding-top:0!important;
+    padding-bottom:0!important;
+  }
+  .lena-selected-logo.header-logo{
+    width:176px!important;
+    height:76px!important;
+    flex:0 0 176px!important;
+    overflow:hidden!important;
+    display:flex!important;
+    align-items:center!important;
+  }
+  .lena-selected-logo.header-logo img{
+    width:176px!important;
+    max-height:none!important;
+    height:auto!important;
+    transform:none!important;
+    margin:0!important;
+    clip-path:inset(0 0 18% 0)!important;
+  }
+  .header-brand-claim{
+    margin-left:16px!important;
+    padding-left:20px!important;
+    border-left:1px solid #b89a62!important;
+    color:#9f7b42!important;
+    font:500 11px/1.55 Arial,Helvetica,sans-serif!important;
+    letter-spacing:.23em!important;
+  }
+}
+
+/* CONTACT: logo is supportive, not dominant */
+.location-title-brand{
+  display:flex!important;
+  align-items:center!important;
+  gap:20px!important;
+  margin:0 0 28px!important;
+}
+.location-title-logo{
+  width:170px!important;
+  height:96px!important;
+  flex:0 0 170px!important;
+  overflow:hidden!important;
+}
+.location-title-logo img{
+  width:170px!important;
+  height:auto!important;
+  transform:none!important;
+  clip-path:inset(0 0 18% 0)!important;
+}
+.location-brand-claim{
+  padding-left:20px!important;
+  border-left:1px solid #b89a62!important;
+  color:#9f7b42!important;
+  font:500 13px/1.6 Arial,Helvetica,sans-serif!important;
+  letter-spacing:.23em!important;
+  white-space:nowrap!important;
+}
+
+/* Map: intentional framed visual, no dead beige area below iframe */
+.location-map-real{
+  min-height:0!important;
+  height:470px!important;
+  border-radius:2px!important;
+  overflow:hidden!important;
+  background:#f4f1e9!important;
+}
+.location-map-real iframe{
+  width:100%!important;
+  height:100%!important;
+  min-height:470px!important;
+  border:0!important;
+  filter:saturate(.82) contrast(.98)!important;
+}
+
+/* Give the map a subtle location label without covering the map. */
+.location-map-real{
+  position:relative!important;
+}
+.location-map-real::after{
+  content:"CHALUPA LENA  ·  DOLNÍ CHŘIBSKÁ EV. Č. 61"!important;
+  position:absolute!important;
+  left:18px!important;
+  bottom:18px!important;
+  z-index:2!important;
+  padding:10px 14px!important;
+  background:rgba(255,255,255,.92)!important;
+  border-left:2px solid #b89a62!important;
+  color:#2d2d2a!important;
+  font:600 10px/1.2 Arial,Helvetica,sans-serif!important;
+  letter-spacing:.12em!important;
+  pointer-events:none!important;
+}
+
+@media(max-width:1120px){
+  .location-title-brand{
+    gap:13px!important;
+    margin-bottom:22px!important;
+  }
+  .location-title-logo{
+    width:132px!important;
+    height:74px!important;
+    flex-basis:132px!important;
+  }
+  .location-title-logo img{width:132px!important}
+  .location-brand-claim{
+    padding-left:13px!important;
+    font-size:9px!important;
+    line-height:1.55!important;
+    letter-spacing:.12em!important;
+    white-space:normal!important;
+  }
+  .location-map-real,
+  .location-map-real iframe{
+    height:330px!important;
+    min-height:330px!important;
+  }
+  .location-map-real::after{
+    left:12px!important;
+    bottom:12px!important;
+    right:12px!important;
+    font-size:9px!important;
+  }
+}
+
+
+
+/* V0.53 — logo geometry correction */
+
+/* The previous version used clip-path + overflow on the full logo.
+   That cut the lower loop of the handwritten L and shifted the header mark upward.
+   V53 uses a clean source crop instead, so no part of the actual logotype is clipped. */
+
+@media(min-width:1121px){
+  nav.main-nav.lena-nav{
+    height:92px!important;
+    min-height:92px!important;
+    display:flex!important;
+    align-items:center!important;
+  }
+  .lena-selected-logo.header-logo{
+    width:158px!important;
+    height:auto!important;
+    flex:0 0 158px!important;
+    overflow:visible!important;
+    display:flex!important;
+    align-items:center!important;
+    margin:0!important;
+  }
+  .lena-selected-logo.header-logo img{
+    display:block!important;
+    width:158px!important;
+    height:auto!important;
+    max-height:76px!important;
+    object-fit:contain!important;
+    object-position:center center!important;
+    transform:none!important;
+    clip-path:none!important;
+    margin:0!important;
+  }
+  .header-brand-claim{
+    align-self:center!important;
+    margin-left:17px!important;
+    padding-left:19px!important;
+    border-left:1px solid #b89a62!important;
+    font-size:10px!important;
+    line-height:1.55!important;
+    letter-spacing:.20em!important;
+  }
+}
+
+/* Address lockup — preserve the complete handwritten L loop. */
+.location-title-brand{
+  align-items:center!important;
+  gap:20px!important;
+}
+.location-title-logo{
+  width:170px!important;
+  height:auto!important;
+  flex:0 0 170px!important;
+  overflow:visible!important;
+}
+.location-title-logo img{
+  display:block!important;
+  width:170px!important;
+  height:auto!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  transform:none!important;
+  clip-path:none!important;
+  margin:0!important;
+}
+.location-brand-claim{
+  align-self:center!important;
+}
+
+@media(max-width:1120px){
+  .location-title-logo{
+    width:135px!important;
+    height:auto!important;
+    flex-basis:135px!important;
+    overflow:visible!important;
+  }
+  .location-title-logo img{
+    width:135px!important;
+    clip-path:none!important;
+  }
+}
+
+
+
+/* V0.54 — základní zázemí pobytu */
+.quick.quick-hospitality{
+  grid-template-columns:repeat(6,1fr)!important;
+}
+.quick.quick-hospitality > div{
+  min-width:0;
+}
+.quick.quick-hospitality strong{
+  white-space:nowrap;
+}
+@media(max-width:1120px){
+  .quick.quick-hospitality{
+    grid-template-columns:repeat(2,1fr)!important;
+  }
+  .quick.quick-hospitality > div{
+    border-bottom:1px solid #dedbd3;
+  }
+}
+
+
+
+/* V0.57 — single header bridge for tablet widths.
+   Historical layout breakpoints remain untouched for page content. */
+@media (min-width:701px) and (max-width:1120px){
+  nav.main-nav.lena-nav{
+    min-height:92px!important;
+    height:92px!important;
+    padding:0 5vw!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+    background:#fff!important;
+  }
+  .desktop-links.lena-desktop-nav{
+    display:none!important;
+  }
+  .mobile-controls{
+    display:flex!important;
+    align-items:center!important;
+    margin-left:auto!important;
+    gap:18px!important;
+  }
+  .hamburger{
+    display:flex!important;
+  }
+  .lena-selected-logo.header-logo{
+    width:158px!important;
+    flex:0 0 158px!important;
+    overflow:visible!important;
+  }
+  .lena-selected-logo.header-logo img{
+    width:158px!important;
+    height:auto!important;
+    max-height:76px!important;
+    object-fit:contain!important;
+    transform:none!important;
+    clip-path:none!important;
+    margin:0!important;
+  }
+  .header-brand-claim{
+    display:none!important;
+  }
+}
+/* Known issue parked intentionally:
+   mobile menu does not reliably close after an anchor selection in local/app preview. */
+
+
+
+/* V0.58 — compact tablet header, no empty transition band */
+@media (min-width:701px) and (max-width:1120px){
+  nav.main-nav.lena-nav{
+    box-sizing:border-box!important;
+    width:100%!important;
+    height:92px!important;
+    min-height:92px!important;
+    max-height:92px!important;
+    padding:0 5vw!important;
+    margin:0!important;
+    display:flex!important;
+    flex-direction:row!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+    flex-wrap:nowrap!important;
+    overflow:visible!important;
+  }
+
+  .lena-nav .brand-wrap,
+  .header-brand-wrap,
+  .lena-brand-group{
+    height:92px!important;
+    min-height:92px!important;
+    display:flex!important;
+    align-items:center!important;
+    margin:0!important;
+    padding:0!important;
+  }
+
+  .lena-selected-logo.header-logo{
+    width:158px!important;
+    height:76px!important;
+    min-height:0!important;
+    flex:0 0 158px!important;
+    margin:0!important;
+    padding:0!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:flex-start!important;
+  }
+
+  .lena-selected-logo.header-logo img{
+    display:block!important;
+    width:158px!important;
+    height:auto!important;
+    max-height:76px!important;
+    margin:0!important;
+  }
+
+  .header-brand-claim{
+    display:none!important;
+  }
+
+  .desktop-links.lena-desktop-nav{
+    display:none!important;
+  }
+
+  .mobile-controls{
+    position:static!important;
+    width:auto!important;
+    height:auto!important;
+    min-height:0!important;
+    margin:0 0 0 auto!important;
+    padding:0!important;
+    display:flex!important;
+    flex-direction:row!important;
+    align-items:center!important;
+    justify-content:flex-end!important;
+    gap:18px!important;
+  }
+
+  .mobile-controls .langs,
+  .langs{
+    position:static!important;
+    margin:0!important;
+    padding:0!important;
+    display:flex!important;
+    align-items:center!important;
+    gap:10px!important;
+  }
+
+  .hamburger{
+    position:static!important;
+    margin:0!important;
+    padding:0!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+  }
+
+  /* Prevent inherited mobile/menu wrappers from reserving vertical space */
+  nav.main-nav.lena-nav > *{
+    margin-top:0!important;
+    margin-bottom:0!important;
+  }
+}
+
+
+
+/* V0.21 — tighter footer + white form fields */
+.siteFooter{padding:34px 6vw 16px;gap:5vw;line-height:1.45}
+.footerLogo{font-size:31px}.footerClaim{font-size:9px;margin-top:2px}
+.footerBrand p{margin-top:10px;line-height:1.45;max-width:360px}
+.siteFooter h4{margin-bottom:9px}.siteFooter>div:not(.footerBrand):not(.footerBottom) a{margin-bottom:5px}
+.siteFooter p{line-height:1.45;margin-top:5px;margin-bottom:5px}.socials{margin-top:10px}
+.footerBottom{margin-top:2px;padding-top:10px;min-height:22px}
+.inquiryForm input,.inquiryForm textarea{background:#fff;color:#181818;border-color:#d8d5cf}
+.inquiryForm input::placeholder,.inquiryForm textarea::placeholder{color:#888}
+@media(max-width:1120px){.siteFooter{padding:34px 6vw 18px}}
+
+
+
+/* V0.22 — final compact footer */
+.siteFooter{padding:24px 6vw 12px;gap:5vw;line-height:1.35}
+.footerLogo{font-size:30px}
+.footerClaim{font-size:9px;margin-top:1px}
+.footerBrand p{margin-top:8px;margin-bottom:0;line-height:1.4;max-width:360px}
+.siteFooter h4{margin:0 0 7px}
+.siteFooter>div:not(.footerBrand):not(.footerBottom) a{margin-bottom:4px}
+.siteFooter p{line-height:1.4;margin-top:4px;margin-bottom:4px}
+.socials{margin-top:7px}
+.socials a{width:28px;height:28px}
+.footerBottom{margin-top:0;padding-top:8px;min-height:18px}
+@media(max-width:1120px){.siteFooter{padding:26px 6vw 14px}}
+@media(max-width:600px){.siteFooter{padding:24px 6vw 14px}}
+
+
+
+/* V0.23 — footer spacing bug fix: previous gap:5vw also created a huge ROW gap */
+.siteFooter{
+  padding:22px 6vw 10px !important;
+  column-gap:5vw !important;
+  row-gap:8px !important;
+  align-items:start !important;
+}
+.footerBottom{
+  margin-top:0 !important;
+  padding-top:8px !important;
+  min-height:0 !important;
+}
+.footerBrand p{margin-top:7px !important;margin-bottom:0 !important;}
+.siteFooter h4{margin:0 0 7px !important;}
+.siteFooter>div:not(.footerBrand):not(.footerBottom) a{margin-bottom:3px !important;}
+.socials{margin-top:7px !important;}
+@media(max-width:1120px){.siteFooter{row-gap:12px !important;}}
+
+/* V0.24 — lifestyle galerie + přirozený claim loga */
+.brand small, .logo small, header .brand small{
+  width:auto!important;
+  display:block!important;
+  text-align:left!important;
+  text-align-last:auto!important;
+  white-space:nowrap!important;
+  font-size:10px!important;
+  letter-spacing:.14em!important;
+  margin-top:7px!important;
+}
+
+.lena-life{padding:105px 6vw;background:#fff}
+.life-head{display:grid;grid-template-columns:.72fr 1.28fr;gap:7vw;align-items:end;margin-bottom:48px}
+.life-head h2{font-size:clamp(44px,5.2vw,76px);line-height:1.02;margin:12px 0}
+.life-head>p{max-width:590px;color:var(--muted);line-height:1.75;margin:0 0 8px}
+.life-grid{display:grid;grid-template-columns:1.35fr .65fr;grid-template-rows:310px 310px;gap:12px}
+.life-card{position:relative;overflow:hidden}
+.life-wide{grid-row:1 / 3}
+.life-placeholder{height:100%;background:linear-gradient(135deg,#ebe7df,#d9d3c8);display:flex;align-items:center;justify-content:center;transition:transform .65s ease,filter .65s ease}
+.life-placeholder span{font-size:10px;letter-spacing:.15em;color:#8b857b}
+.life-card:hover .life-placeholder{transform:scale(1.025);filter:contrast(1.03)}
+.life-card small{position:absolute;left:18px;bottom:16px;background:rgba(255,255,255,.9);padding:9px 12px;font-size:9px;letter-spacing:.08em;text-transform:uppercase}
+.taste{background:#f7f5f0;border:1px solid #e3ded4}
+.taste-inner{height:100%;padding:36px;display:flex;flex-direction:column;justify-content:center}
+.taste h3{font-size:27px;line-height:1.15;margin:12px 0 13px}
+.taste p{font-size:12px;line-height:1.65;color:var(--muted);max-width:390px}
+.gallery-title{padding:0 0 34px;display:grid;grid-template-columns:.6fr 1fr;column-gap:5vw;align-items:end}
+.gallery-title h2{font-size:clamp(38px,4.2vw,62px);margin:8px 0 0}
+.gallery-title p{color:var(--muted);line-height:1.7;margin:0}
+@media(max-width:1120px){
+ .life-head,.gallery-title{grid-template-columns:1fr}
+ .life-grid{grid-template-columns:1fr 1fr;grid-template-rows:420px 250px}
+ .life-wide{grid-column:1/3;grid-row:auto}
+ .lena-life{padding:75px 6vw}
+}
+@media(max-width:620px){
+ .life-grid{display:block}
+ .life-card{height:300px;margin-bottom:10px}
+ .life-wide{height:430px}
+}
+
+
+/* V0.25 — návrat původního Pro koho + galerie bez násilného nadpisu */
+.gallery-title{display:none!important}
+.gallery-regional{
+  min-height:220px;
+  background:#f5f2eb;
+  padding:34px 38px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+}
+.gallery-regional .regional-line{
+  max-width:430px;
+  margin-top:10px;
+  font-size:clamp(24px,2.2vw,36px);
+  line-height:1.12;
+}
+
+
+
+
+/* ===== LENA production extensions ===== */
+.production-equipment-detail{text-align:center;padding-top:30px}
+.production-cta{display:inline-flex;align-items:center;justify-content:center;border:1px solid #b89a62;
+padding:15px 27px;font-size:10px;letter-spacing:.16em;color:#9a7739;transition:.2s ease}
+.production-cta:hover{background:#b89a62;color:#fff;transform:translateY(-1px)}
+
+/* ===== Multipage layout ===== */
+.subpage{background:#f8f6f1;color:#2a2a27}
+.sub-header{height:86px;background:#fff;border-bottom:1px solid #dedad1;display:flex;align-items:center;
+justify-content:space-between;padding:0 5vw;position:sticky;top:0;z-index:20}
+.sub-logo{font:32px Georgia,serif}.sub-logo em{color:#b89a62;font-weight:400}
+.sub-nav{display:flex;gap:26px;font-size:12px;align-items:center}.sub-nav a:hover{color:#b89a62}
+.sub-hero{max-width:1200px;margin:auto;padding:100px 7vw 70px}
+.sub-kicker{font-size:10px;letter-spacing:.2em;color:#b89a62;margin-bottom:20px}
+.sub-hero h1{font:400 clamp(44px,6vw,78px)/1 Georgia,serif;margin:0 0 28px}
+.sub-lead{font:20px/1.65 Georgia,serif;color:#666;max-width:820px}
+.story{max-width:1200px;margin:auto;padding:0 7vw 90px}
+.story-section{display:grid;grid-template-columns:1fr 2fr;gap:60px;padding:52px 0;border-top:1px solid #dedad1}
+.story-section h2{font:400 32px/1.15 Georgia,serif;margin:0}
+.story-copy p{font-size:16px;line-height:1.8;margin:0 0 18px}
+.fact-area{background:#fff;padding:70px 7vw}.fact-inner{max-width:1200px;margin:auto}
+.fact-area h2{font:400 42px Georgia,serif;margin:0 0 40px}
+.fact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:#dedad1;border:1px solid #dedad1}
+.fact{background:#fff;padding:30px}.fact h3{font:400 21px Georgia,serif;margin:0 0 10px}.fact p{margin:0;color:#666;line-height:1.65}
+.tip-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.tip{background:#fff;border:1px solid #dedad1;padding:32px}.tip h2{font:400 26px Georgia,serif;margin:0 0 12px}.tip p{color:#666;line-height:1.65;margin:0}
+.sub-footer{background:#242625;color:#fff;padding:45px 7vw}.sub-footer-inner{max-width:1200px;margin:auto;display:flex;justify-content:space-between;gap:30px}
+@media(max-width:800px){.sub-header{height:auto;padding:18px 6vw;align-items:flex-start}.sub-nav{gap:11px;flex-wrap:wrap;justify-content:flex-end}
+.sub-hero{padding:65px 7vw 45px}.story-section{grid-template-columns:1fr;gap:16px;padding:38px 0}
+.fact-grid,.tip-grid{grid-template-columns:1fr}.sub-footer-inner{flex-direction:column}}
+
+
+/* =========================================================
+   LENA V2.1 — KOSTRA DRUHÉ VRSTVY
+   Header + footer jsou 1:1 převzaté z homepage V80.
+   ========================================================= */
+.layer-nav{
+  width:100%;
+  max-width:1500px;
+  margin:0 auto;
+  padding:22px 5vw 18px;
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:32px;
+  border-bottom:1px solid #dedad1;
+  background:#f8f6f1;
+}
+.layer-nav__parent{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:3px;
+  color:#9a7739;
+}
+.layer-nav__parent span,
+.layer-nav__action{
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+.layer-nav__parent em{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:15px;
+  line-height:1.2;
+  font-weight:400;
+  letter-spacing:0;
+  text-transform:none;
+  color:#8f8a82;
+}
+.layer-nav__action{
+  color:#9a7739;
+  white-space:nowrap;
+  padding-top:1px;
+}
+.layer-nav a{transition:opacity .2s ease}
+.layer-nav a:hover{opacity:.62}
+.layer-nav--bottom{
+  border-top:1px solid #dedad1;
+  border-bottom:0;
+  padding-top:25px;
+  padding-bottom:25px;
+}
+@media(max-width:800px){
+  .layer-nav{
+    padding:17px 6vw 14px;
+    gap:18px;
+  }
+  .layer-nav__parent span,
+  .layer-nav__action{font-size:9px}
+  .layer-nav__parent em{font-size:12px}
+  .layer-nav__action{
+    white-space:normal;
+    text-align:right;
+  }
+}
+
+/* ===== LENA V2.5 — OKOLÍ / SEZÓNNÍ KONCEPT ===== */
+.season-overview,
+.season-section{
+  max-width:1120px;
+  margin:0 auto;
+  padding:72px 0;
+}
+.season-overview{
+  border-top:1px solid #ded9cf;
+}
+.season-overview__intro,
+.season-heading{
+  max-width:760px;
+}
+.season-kicker,
+.destination-type{
+  display:block;
+  margin-bottom:18px;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.18em;
+  color:#b28a46;
+}
+.season-overview h2,
+.season-heading h2{
+  margin:0 0 22px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-weight:400;
+  font-size:46px;
+  line-height:1.05;
+  color:#292925;
+}
+.season-overview p,
+.season-heading p{
+  font-size:16px;
+  line-height:1.75;
+  color:#666158;
+}
+.season-tabs{
+  display:flex;
+  gap:12px;
+  margin-top:38px;
+  flex-wrap:wrap;
+}
+.season-tabs a{
+  border:1px solid #c7a565;
+  padding:13px 18px;
+  font:600 10px Arial,Helvetica,sans-serif;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:#9a7739;
+}
+.season-section{
+  border-top:1px solid #ded9cf;
+}
+.season-coming{
+  margin-top:32px;
+  padding:24px 0;
+  border-top:1px solid #e4dfd6;
+  font-family:Georgia,"Times New Roman",serif;
+  font-style:italic;
+  color:#9b968c;
+}
+.destination-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+  margin-top:48px;
+}
+.destination-card{
+  background:#fff;
+  border:1px solid #ded9cf;
+  display:flex;
+  flex-direction:column;
+}
+.destination-photo{
+  min-height:235px;
+  display:flex;
+  align-items:flex-end;
+  padding:18px;
+  background:
+    linear-gradient(135deg,rgba(36,38,37,.08),rgba(36,38,37,.18)),
+    #e8e4dc;
+}
+.destination-photo span{
+  font:600 9px Arial,Helvetica,sans-serif;
+  letter-spacing:.16em;
+  color:#6d685f;
+}
+.destination-body{
+  padding:30px 28px 32px;
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+.destination-type{
+  margin-bottom:12px;
+}
+.destination-body h3{
+  margin:0 0 18px;
+  font:400 30px/1.1 Georgia,"Times New Roman",serif;
+  color:#292925;
+}
+.destination-body p{
+  margin:0 0 22px;
+  font-size:14px;
+  line-height:1.65;
+  color:#625e56;
+}
+.destination-meta{
+  margin-top:auto;
+  padding-top:18px;
+  border-top:1px solid #e5e0d7;
+  font-size:12px;
+  color:#777168;
+}
+.destination-body a,
+.destination-link-muted{
+  margin-top:16px;
+  font:600 10px Arial,Helvetica,sans-serif;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#a27d3e;
+}
+.destination-link-muted{color:#aaa49a}
+@media(max-width:900px){
+  .season-overview,.season-section{padding:54px 6vw}
+  .destination-grid{grid-template-columns:1fr}
+  .destination-photo{min-height:280px}
+}
+@media(max-width:600px){
+  .season-overview h2,.season-heading h2{font-size:36px}
+  .season-tabs{display:grid;grid-template-columns:1fr}
+}
+
+/* ===== LENA V2.6 — WINTER VISUAL / VARIANTA 1 ===== */
+.season-section--winter{
+  padding-bottom:92px;
+}
+.season-section--winter .season-heading{
+  max-width:790px;
+}
+.season-section--winter .season-heading h2{
+  font-size:50px;
+  max-width:760px;
+}
+.destination-grid{
+  gap:24px;
+}
+.destination-card{
+  overflow:hidden;
+  transition:transform .28s ease, box-shadow .28s ease;
+}
+.destination-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 14px 34px rgba(38,34,27,.07);
+}
+.destination-photo{
+  padding:0;
+  min-height:0;
+  height:285px;
+  overflow:hidden;
+  background:#e8e4dc;
+}
+.destination-photo img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  transition:transform .5s ease, filter .5s ease;
+}
+.destination-card:hover .destination-photo img{
+  transform:scale(1.025);
+}
+.destination-card:nth-child(1) .destination-photo img{
+  object-position:center center;
+}
+.destination-card:nth-child(2) .destination-photo img{
+  object-position:center center;
+}
+.destination-card:nth-child(3) .destination-photo img{
+  object-position:center center;
+}
+.destination-body{
+  padding:32px 30px 34px;
+}
+.destination-body h3{
+  font-size:32px;
+}
+.destination-body a{
+  display:inline-block;
+  width:max-content;
+  border-bottom:1px solid transparent;
+  padding-bottom:3px;
+}
+.destination-body a:hover{
+  border-bottom-color:#a27d3e;
+}
+.winter-closing{
+  position:relative;
+  max-width:1120px;
+  min-height:390px;
+  margin:10px auto 78px;
+  overflow:hidden;
+  background:
+    linear-gradient(90deg,rgba(248,246,241,.97) 0%,rgba(248,246,241,.86) 37%,rgba(248,246,241,.28) 72%,rgba(248,246,241,.06) 100%),
+    url("../images/okoli/luzicke-hory-bezky.jpg") center 56% / cover no-repeat;
+}
+.winter-closing__veil{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(0deg,rgba(248,246,241,.18),rgba(248,246,241,.03));
+}
+.winter-closing__content{
+  position:relative;
+  z-index:1;
+  padding:86px 62px;
+  max-width:540px;
+}
+.winter-closing__rule{
+  display:block;
+  width:38px;
+  height:1px;
+  background:#b28a46;
+  margin-bottom:24px;
+}
+.winter-closing h2{
+  margin:0 0 24px;
+  font:italic 400 42px/1.12 Georgia,"Times New Roman",serif;
+  color:#292925;
+}
+.winter-closing__small{
+  font:600 9px Arial,Helvetica,sans-serif;
+  letter-spacing:.18em;
+  color:#a27d3e;
+}
+@media(max-width:900px){
+  .destination-photo{height:340px}
+  .winter-closing{margin:0 6vw 58px; min-height:350px}
+  .winter-closing__content{padding:70px 42px}
+}
+@media(max-width:600px){
+  .season-section--winter .season-heading h2{font-size:38px}
+  .destination-photo{height:250px}
+  .winter-closing{
+    min-height:390px;
+    background:
+      linear-gradient(90deg,rgba(248,246,241,.94),rgba(248,246,241,.62)),
+      url("../images/okoli/luzicke-hory-bezky.jpg") center / cover no-repeat;
+  }
+  .winter-closing__content{padding:62px 28px}
+  .winter-closing h2{font-size:34px}
+}
+
+/* ===== LENA V2.7 — ZIMNÍ PODSTRÁNKA / 4 KARTY + MAGISTRÁLA ===== */
+.season-section--winter .destination-grid{
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:18px;
+}
+.season-section--winter .destination-photo{height:245px}
+.season-section--winter .destination-body{padding:27px 22px 30px}
+.season-section--winter .destination-body h3{font-size:28px}
+.season-section--winter .destination-body p{font-size:13px;line-height:1.62}
+.season-section--winter .destination-meta{font-size:11px}
+.winter-closing--v27{
+  max-width:1120px;
+  min-height:405px;
+  margin:0 auto;
+  background:
+    linear-gradient(90deg,rgba(248,246,241,.88) 0%,rgba(248,246,241,.52) 42%,rgba(248,246,241,.04) 78%),
+    url("../images/okoli/winter-atmosphere.jpg") center / cover no-repeat;
+}
+.winter-closing--v27 .winter-closing__content{
+  padding:92px 58px;
+}
+.magistrala{
+  max-width:1120px;
+  margin:0 auto 78px;
+  padding:46px 58px;
+  display:grid;
+  grid-template-columns:72px 1fr auto;
+  gap:28px;
+  align-items:center;
+  background:#fff;
+  border:1px solid #e2ddd3;
+}
+.magistrala__icon{
+  font:400 54px/1 Georgia,"Times New Roman",serif;
+  color:#b28a46;
+  transform:rotate(180deg);
+  text-align:center;
+}
+.magistrala .season-kicker{margin-bottom:10px}
+.magistrala h2{
+  margin:0 0 13px;
+  font:400 34px/1.08 Georgia,"Times New Roman",serif;
+  color:#292925;
+}
+.magistrala p{
+  max-width:670px;
+  margin:0;
+  font-size:13px;
+  line-height:1.65;
+  color:#625e56;
+}
+.magistrala__action a{
+  display:inline-block;
+  padding:15px 21px;
+  background:#b28a46;
+  color:#fff;
+  font:600 9px Arial,Helvetica,sans-serif;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+.magistrala__action a:hover{transform:translateY(-1px)}
+@media(max-width:1000px){
+  .season-section--winter .destination-grid{grid-template-columns:repeat(2,1fr)}
+  .season-section--winter .destination-photo{height:300px}
+  .magistrala{grid-template-columns:60px 1fr}
+  .magistrala__action{grid-column:2}
+}
+@media(max-width:650px){
+  .season-section--winter .destination-grid{grid-template-columns:1fr}
+  .season-section--winter .destination-photo{height:270px}
+  .winter-closing--v27{margin:0 6vw}
+  .magistrala{
+    margin:0 6vw 55px;
+    padding:34px 26px;
+    grid-template-columns:1fr;
+  }
+  .magistrala__icon{text-align:left}
+  .magistrala__action{grid-column:1}
+}
+
+/* ===== LENA V2.8 — WIDE WINTER PAGE ===== */
+body{
+  overflow-x:hidden;
+}
+.story{
+  max-width:none;
+}
+.season-overview,
+.season-section{
+  width:min(1420px,calc(100% - 72px));
+  max-width:none;
+}
+.season-section--winter{
+  padding-top:84px;
+  padding-bottom:96px;
+}
+.season-section--winter .season-heading{
+  max-width:980px;
+}
+.season-section--winter .season-heading h2{
+  max-width:1050px;
+  font-size:58px;
+  line-height:1.02;
+}
+.season-section--winter .season-heading p{
+  max-width:880px;
+  font-size:16px;
+}
+.season-section--winter .destination-grid{
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:24px;
+  margin-top:54px;
+}
+.season-section--winter .destination-card{
+  min-width:0;
+  border-color:#e2ddd3;
+  box-shadow:none;
+}
+.season-section--winter .destination-photo{
+  height:330px;
+}
+.season-section--winter .destination-body{
+  padding:32px 28px 34px;
+}
+.season-section--winter .destination-body h3{
+  font-size:34px;
+  line-height:1.04;
+}
+.season-section--winter .destination-body p{
+  font-size:14px;
+  line-height:1.68;
+}
+.destination-meta--icons{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:12px 20px;
+  min-height:48px;
+}
+.meta-item{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  min-width:0;
+}
+.meta-item svg{
+  width:20px;
+  height:20px;
+  flex:0 0 20px;
+  fill:none;
+  stroke:#b28a46;
+  stroke-width:1.6;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.destination-body a{
+  white-space:normal;
+  line-height:1.35;
+}
+.winter-closing--v28{
+  width:min(1520px,100%);
+  max-width:none;
+  min-height:500px;
+  margin:0 auto;
+  background:
+    linear-gradient(90deg,rgba(248,246,241,.90) 0%,rgba(248,246,241,.55) 34%,rgba(248,246,241,.08) 72%),
+    url("../images/okoli/winter-atmosphere-clean.jpg") center 52% / cover no-repeat;
+}
+.winter-closing--v28 .winter-closing__content{
+  width:min(1420px,calc(100% - 72px));
+  max-width:none;
+  margin:0 auto;
+  padding:118px 0;
+}
+.winter-closing--v28 h2{
+  font-size:52px;
+  line-height:1.08;
+}
+.magistrala{
+  width:min(1420px,calc(100% - 72px));
+  max-width:none;
+  margin:0 auto 90px;
+  padding:54px 42px;
+  grid-template-columns:92px minmax(0,1fr) auto;
+  gap:34px;
+  border-top:0;
+}
+.magistrala__icon{
+  color:#b28a46;
+  transform:none;
+  font-size:0;
+}
+.magistrala-tree-icon{
+  width:86px;
+  height:74px;
+  display:block;
+}
+.magistrala h2{
+  font-size:40px;
+}
+.magistrala p{
+  max-width:780px;
+  font-size:14px;
+  line-height:1.68;
+}
+.magistrala__action a{
+  padding:17px 24px;
+}
+@media(max-width:1180px){
+  .season-section--winter .destination-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  .season-section--winter .destination-photo{height:360px}
+  .magistrala{
+    grid-template-columns:82px minmax(0,1fr);
+  }
+  .magistrala__action{grid-column:2}
+}
+@media(max-width:700px){
+  .season-overview,.season-section{
+    width:calc(100% - 36px);
+  }
+  .season-section--winter .season-heading h2{font-size:42px}
+  .season-section--winter .destination-grid{grid-template-columns:1fr}
+  .season-section--winter .destination-photo{height:290px}
+  .winter-closing--v28{
+    width:100%;
+    min-height:430px;
+  }
+  .winter-closing--v28 .winter-closing__content{
+    width:calc(100% - 44px);
+    padding:90px 0;
+  }
+  .winter-closing--v28 h2{font-size:38px}
+  .magistrala{
+    width:calc(100% - 36px);
+    padding:36px 26px;
+    grid-template-columns:1fr;
+  }
+  .magistrala__action{grid-column:1}
+}
+
+/* ===== LENA V2.9 — WINTER REFINEMENT ===== */
+
+/* tighter rhythm between intro and cards */
+.season-section--winter{
+  padding-top:72px;
+  padding-bottom:82px;
+}
+.season-section--winter .destination-grid{
+  margin-top:42px;
+}
+
+/* equal visual card endings */
+.season-section--winter .destination-card{
+  display:flex;
+  flex-direction:column;
+}
+.season-section--winter .destination-body{
+  display:flex;
+  flex-direction:column;
+  flex:1;
+  padding:31px 28px 30px;
+}
+.season-section--winter .destination-body p{
+  margin-bottom:22px;
+}
+.season-section--winter .destination-meta{
+  margin-top:auto;
+}
+.season-section--winter .destination-body > a{
+  margin-top:15px;
+  min-height:28px;
+  display:flex;
+  align-items:center;
+}
+
+/* cleaner, slightly more compact metadata */
+.destination-meta--icons{
+  gap:10px 18px;
+  min-height:45px;
+  padding-top:17px;
+}
+.meta-item{
+  white-space:nowrap;
+}
+.meta-item svg{
+  width:19px;
+  height:19px;
+  flex-basis:19px;
+}
+
+/* stronger photograph, softer left veil */
+.winter-closing--v28{
+  min-height:475px;
+  background:
+    linear-gradient(90deg,
+      rgba(248,246,241,.78) 0%,
+      rgba(248,246,241,.42) 31%,
+      rgba(248,246,241,.05) 68%),
+    url("../images/okoli/winter-atmosphere-clean.jpg") center 52% / cover no-repeat;
+}
+.winter-closing--v28 .winter-closing__content{
+  padding:110px 0;
+}
+.winter-closing--v28 h2{
+  text-shadow:0 1px 14px rgba(255,255,255,.22);
+}
+
+/* magistrala: larger pictogram, lower/cleaner block */
+.magistrala{
+  min-height:0;
+  padding:38px 42px;
+  margin-bottom:82px;
+  grid-template-columns:108px minmax(0,1fr) auto;
+  gap:30px;
+}
+.magistrala-tree-icon{
+  width:100px;
+  height:84px;
+}
+.magistrala h2{
+  margin-bottom:10px;
+  font-size:38px;
+}
+.magistrala p{
+  line-height:1.6;
+}
+.magistrala__action a{
+  padding:16px 23px;
+}
+
+@media(max-width:1180px){
+  .magistrala{
+    grid-template-columns:92px minmax(0,1fr);
+  }
+}
+@media(max-width:700px){
+  .season-section--winter{
+    padding-top:54px;
+    padding-bottom:64px;
+  }
+  .season-section--winter .destination-grid{
+    margin-top:32px;
+  }
+  .meta-item{
+    white-space:normal;
+  }
+  .winter-closing--v28{
+    min-height:410px;
+    background:
+      linear-gradient(90deg,rgba(248,246,241,.82),rgba(248,246,241,.32)),
+      url("../images/okoli/winter-atmosphere-clean.jpg") center / cover no-repeat;
+  }
+  .magistrala{
+    padding:32px 24px;
+  }
+}
+
+/* =========================================================
+   LENA V2.9.1 — OKOLÍ LAYOUT CLEANUP
+   ========================================================= */
+
+/* 1) Upper part of Okolí returns to one calm content axis.
+      Only the winter card section opens to the wide layout. */
+.story > .page-hero,
+.story > .intro,
+.story > .season-overview,
+.story > .season-section--placeholder{
+  width:min(1240px,calc(100% - 72px));
+  max-width:none;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* Keep the opening hero compact instead of floating in empty space. */
+.story > .page-hero{
+  padding-top:64px;
+  padding-bottom:64px;
+}
+.story > .page-hero h1{
+  max-width:820px;
+}
+.story > .page-hero p{
+  max-width:720px;
+}
+
+/* Intro: title + copy remain related and don't fly to opposite page edges. */
+.story > .intro{
+  display:grid;
+  grid-template-columns:minmax(300px,.8fr) minmax(420px,1.2fr);
+  column-gap:72px;
+  align-items:start;
+  padding-top:48px;
+  padding-bottom:48px;
+}
+.story > .intro h2{
+  margin-top:0;
+}
+.story > .intro p{
+  max-width:680px;
+  margin-top:0;
+}
+
+/* Seasonal selector uses the same left edge and readable text width. */
+.story > .season-overview{
+  padding-top:58px;
+  padding-bottom:58px;
+}
+.story > .season-overview .season-overview__intro{
+  max-width:780px;
+}
+
+/* Placeholder seasons stay on the same 1240px construction. */
+.story > .season-section--placeholder{
+  padding-top:58px;
+  padding-bottom:58px;
+}
+
+/* Winter remains the intentional wide photographic moment. */
+.story > .season-section--winter{
+  width:min(1420px,calc(100% - 72px));
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* 2) Panorama + magistrala = one module, one width, one edge. */
+.winter-feature{
+  width:min(1420px,calc(100% - 72px));
+  margin:0 auto 82px;
+  border:1px solid #e2ddd3;
+  background:#fff;
+  overflow:hidden;
+}
+.winter-feature .winter-closing--v28{
+  width:100%;
+  max-width:none;
+  margin:0;
+  border:0;
+}
+.winter-feature .magistrala{
+  width:100%;
+  max-width:none;
+  margin:0;
+  border:0;
+  border-top:1px solid #e2ddd3;
+  padding:36px 46px;
+}
+.winter-feature .magistrala__content{
+  min-width:0;
+}
+.winter-feature .magistrala__action{
+  justify-self:end;
+}
+
+/* 3) Homepage Okolí CTA: stronger but still editorial, not a button. */
+.okoli-home-cta{
+  display:inline-flex !important;
+  align-items:center;
+  gap:10px;
+  margin-top:12px;
+  font-size:18px !important;
+  line-height:1.2 !important;
+  letter-spacing:.10em !important;
+  font-weight:600 !important;
+  color:#c5a15e !important;
+  text-transform:uppercase;
+  transition:transform .22s ease, letter-spacing .22s ease, opacity .22s ease;
+}
+.okoli-home-cta:hover{
+  transform:translateX(4px);
+  letter-spacing:.13em !important;
+  opacity:.9;
+}
+
+/* Responsive cleanup */
+@media(max-width:900px){
+  .story > .page-hero,
+  .story > .intro,
+  .story > .season-overview,
+  .story > .season-section--placeholder,
+  .story > .season-section--winter,
+  .winter-feature{
+    width:calc(100% - 44px);
+  }
+  .story > .intro{
+    grid-template-columns:1fr;
+    row-gap:22px;
+  }
+  .winter-feature .magistrala{
+    padding:34px 28px;
+  }
+}
+@media(max-width:600px){
+  .story > .page-hero,
+  .story > .intro,
+  .story > .season-overview,
+  .story > .season-section--placeholder,
+  .story > .season-section--winter,
+  .winter-feature{
+    width:calc(100% - 32px);
+  }
+  .story > .page-hero{
+    padding-top:44px;
+    padding-bottom:44px;
+  }
+  .okoli-home-cta{
+    font-size:15px !important;
+  }
+}
+
+/* =========================================================
+   LENA V2.9.2 — OKOLÍ FINAL CLEANUP
+   ========================================================= */
+
+/* One consistent readable axis for the top of the Okolí page. */
+body.okoli-page .story .page-hero,
+body.okoli-page .story .intro,
+body.okoli-page .story .season-overview,
+body.okoli-page .story .season-section--placeholder,
+.okoli-page .story .page-hero,
+.okoli-page .story .intro,
+.okoli-page .story .season-overview,
+.okoli-page .story .season-section--placeholder{
+  width:min(1180px, calc(100% - 72px)) !important;
+  max-width:1180px !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  box-sizing:border-box;
+}
+
+/* Hero: remove the excessive vertical void. */
+.okoli-page .page-hero{
+  padding-top:62px !important;
+  padding-bottom:62px !important;
+}
+.okoli-page .page-hero h1{
+  max-width:760px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.okoli-page .page-hero p{
+  max-width:720px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* Intro: keep headline and paragraph close enough to read as one block. */
+.okoli-page .intro{
+  grid-template-columns:minmax(300px, .9fr) minmax(420px, 1.1fr) !important;
+  column-gap:58px !important;
+  padding-top:42px !important;
+  padding-bottom:42px !important;
+}
+.okoli-page .intro h2,
+.okoli-page .intro p{
+  margin-top:0 !important;
+}
+
+/* Seasonal intro aligns to exactly the same axis. */
+.okoli-page .season-overview{
+  padding-top:48px !important;
+  padding-bottom:52px !important;
+}
+.okoli-page .season-overview__intro{
+  max-width:760px !important;
+  margin-left:0 !important;
+}
+
+/* Winter is intentionally the first wide visual section. */
+.okoli-page .season-section--winter{
+  width:min(1420px, calc(100% - 72px)) !important;
+  max-width:1420px !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
+/* Panorama and magistrala remain one aligned module. */
+.okoli-page .winter-feature{
+  width:min(1420px, calc(100% - 72px)) !important;
+  max-width:1420px !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+.okoli-page .winter-feature .winter-closing--v28,
+.okoli-page .winter-feature .magistrala{
+  width:100% !important;
+  max-width:none !important;
+  box-sizing:border-box;
+}
+
+/* Polevsko category can fit the added activity without changing card design. */
+.okoli-page .destination-card .destination-kicker{
+  white-space:normal;
+}
+
+@media(max-width:900px){
+  body.okoli-page .story .page-hero,
+  body.okoli-page .story .intro,
+  body.okoli-page .story .season-overview,
+  body.okoli-page .story .season-section--placeholder,
+  .okoli-page .story .page-hero,
+  .okoli-page .story .intro,
+  .okoli-page .story .season-overview,
+  .okoli-page .story .season-section--placeholder,
+  .okoli-page .season-section--winter,
+  .okoli-page .winter-feature{
+    width:calc(100% - 44px) !important;
+  }
+  .okoli-page .intro{
+    grid-template-columns:1fr !important;
+    row-gap:20px !important;
+  }
+}
+
+/* =========================================================
+   LENA V2.10 — OKOLÍ REBUILD
+   Full-bleed panoramas + clean content rhythm
+   ========================================================= */
+
+/* Reset inherited width/padding rules only inside the rebuilt Okolí page. */
+.okoli-v210 .story{
+  overflow:visible;
+}
+.okoli-v210 .story > .okoli-hero-v210{
+  width:100vw !important;
+  max-width:none !important;
+  margin-left:calc(50% - 50vw) !important;
+  margin-right:calc(50% - 50vw) !important;
+}
+
+/* FULL-BLEED OPENING HERO */
+.okoli-hero-v210{
+  position:relative;
+  min-height:clamp(600px,72vh,860px);
+  background:url("../images/okoli/okoli-hero-panorama-v210.jpg") center 48% / cover no-repeat;
+  color:#fff;
+  display:flex;
+  align-items:flex-end;
+  isolation:isolate;
+}
+.okoli-hero-v210__overlay{
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:
+    linear-gradient(90deg,rgba(13,17,16,.60) 0%,rgba(13,17,16,.26) 42%,rgba(13,17,16,.04) 72%),
+    linear-gradient(0deg,rgba(13,17,16,.34) 0%,rgba(13,17,16,0) 50%);
+}
+.okoli-hero-v210__content{
+  width:min(1240px,calc(100% - 96px));
+  margin:0 auto;
+  padding:0 0 82px;
+}
+.okoli-hero-v210__kicker{
+  color:#d0ad68;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.22em;
+  margin-bottom:18px;
+}
+.okoli-hero-v210 h1{
+  margin:0;
+  max-width:900px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(58px,6vw,92px);
+  line-height:.98;
+  font-weight:400;
+  letter-spacing:-.025em;
+}
+.okoli-hero-v210__rule{
+  width:48px;
+  height:1px;
+  background:#c5a15e;
+  margin:30px 0 27px;
+}
+.okoli-hero-v210 h2{
+  margin:0 0 14px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(25px,2.2vw,36px);
+  line-height:1.15;
+  font-weight:400;
+}
+.okoli-hero-v210 p{
+  margin:0;
+  font-size:17px;
+  line-height:1.65;
+  color:rgba(255,255,255,.92);
+}
+
+/* CLEAN FIRST CONTENT SECTION */
+.okoli-v210 .story > .season-overview{
+  width:min(1180px,calc(100% - 72px)) !important;
+  max-width:1180px !important;
+  margin:0 auto !important;
+  padding:78px 0 70px !important;
+  border:0 !important;
+}
+.okoli-v210 .season-overview__intro{
+  max-width:820px !important;
+  margin:0 !important;
+}
+.okoli-v210 .season-overview h2{
+  margin-top:10px;
+}
+.okoli-v210 .season-overview p{
+  max-width:700px;
+}
+.okoli-v210 .season-tabs{
+  margin-top:30px;
+}
+
+/* PLACEHOLDER / OTHER SEASONS KEEP ONE CONTENT AXIS */
+.okoli-v210 .story > .season-section--placeholder{
+  width:min(1180px,calc(100% - 72px)) !important;
+  max-width:1180px !important;
+  margin:0 auto !important;
+}
+
+/* WINTER CARDS: intentional wide section */
+.okoli-v210 .story > .season-section--winter{
+  width:min(1420px,calc(100% - 72px)) !important;
+  max-width:1420px !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
+/* FULL-BLEED WINTER PANORAMA */
+.okoli-v210 .winter-feature{
+  width:100vw !important;
+  max-width:none !important;
+  margin-left:calc(50% - 50vw) !important;
+  margin-right:calc(50% - 50vw) !important;
+  margin-bottom:0 !important;
+  border:0 !important;
+  background:#fff;
+  overflow:hidden;
+}
+.okoli-v210 .winter-closing-v210{
+  position:relative;
+  width:100% !important;
+  max-width:none !important;
+  min-height:clamp(430px,54vw,680px);
+  margin:0 !important;
+  background:url("../images/okoli/winter-panorama-v210.jpg") center 48% / cover no-repeat;
+  display:flex;
+  align-items:center;
+  isolation:isolate;
+}
+.winter-closing-v210__overlay{
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:linear-gradient(90deg,rgba(247,244,237,.82) 0%,rgba(247,244,237,.52) 27%,rgba(247,244,237,.08) 55%,rgba(247,244,237,0) 76%);
+}
+.winter-closing-v210__content{
+  width:min(1240px,calc(100% - 96px));
+  margin:0 auto;
+}
+.winter-closing-v210__rule{
+  width:46px;
+  height:1px;
+  background:#b89048;
+  margin-bottom:26px;
+}
+.winter-closing-v210 h2{
+  margin:0 0 22px;
+  max-width:650px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-style:italic;
+  font-weight:400;
+  font-size:clamp(42px,4vw,66px);
+  line-height:1.08;
+  color:#171915;
+}
+.winter-closing-v210 p{
+  margin:0;
+  color:#a7782f;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.18em;
+}
+
+/* MAGISTRALA NOW FOLLOWS THE FULL-BLEED PHOTO CLEANLY */
+.okoli-v210 .winter-feature .magistrala{
+  width:min(1240px,calc(100% - 72px)) !important;
+  max-width:1240px !important;
+  margin:0 auto !important;
+  border:0 !important;
+  padding:46px 0 52px !important;
+  background:#fff;
+}
+
+/* Preserve the stronger homepage CTA from previous version. */
+.okoli-home-cta{
+  font-size:18px !important;
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .okoli-hero-v210{
+    min-height:620px;
+  }
+  .okoli-hero-v210__content,
+  .winter-closing-v210__content{
+    width:calc(100% - 48px);
+  }
+  .okoli-v210 .story > .season-overview,
+  .okoli-v210 .story > .season-section--placeholder,
+  .okoli-v210 .story > .season-section--winter,
+  .okoli-v210 .winter-feature .magistrala{
+    width:calc(100% - 44px) !important;
+  }
+}
+@media(max-width:600px){
+  .okoli-hero-v210{
+    min-height:560px;
+    background-position:58% center;
+  }
+  .okoli-hero-v210__content{
+    padding-bottom:48px;
+  }
+  .okoli-hero-v210 h1{
+    font-size:50px;
+  }
+  .okoli-v210 .story > .season-overview{
+    padding:54px 0 50px !important;
+  }
+  .okoli-v210 .winter-closing-v210{
+    min-height:480px;
+    background-position:58% center;
+  }
+  .winter-closing-v210__overlay{
+    background:linear-gradient(90deg,rgba(247,244,237,.88),rgba(247,244,237,.38) 72%,rgba(247,244,237,.08));
+  }
+  .winter-closing-v210 h2{
+    font-size:40px;
+  }
+}
+
+
+/* =========================================================
+   LENA V2.12 — FINAL OKOLÍ POLISH
+   Hero navigation over panorama + clean winter panorama
+   ========================================================= */
+.okoli-v210 .okoli-hero-v210 .layer-nav--hero{
+  position:absolute;
+  z-index:3;
+  top:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:min(1500px,100%);
+  max-width:1500px;
+  margin:0;
+  padding:22px 5vw 18px;
+  border:0;
+  background:transparent;
+}
+.okoli-v210 .okoli-hero-v210 .layer-nav--hero .layer-nav__parent,
+.okoli-v210 .okoli-hero-v210 .layer-nav--hero .layer-nav__action{
+  color:#fff;
+  text-shadow:0 1px 10px rgba(0,0,0,.42);
+}
+.okoli-v210 .winter-closing-v210{
+  min-height:clamp(430px,43vw,650px);
+  background-position:center center;
+}
+.okoli-v210 .winter-closing-v210::after{
+  content:none;
+}
+@media(max-width:800px){
+  .okoli-v210 .okoli-hero-v210 .layer-nav--hero{
+    padding:17px 6vw 14px;
+  }
+}
+
+/* V2.13 — LÉTO: stejný vizuální systém jako zimní karty */
+.season-section--summer{
+  max-width:1480px;
+  margin:0 auto;
+  padding:78px 32px 88px;
+}
+.season-section--summer .season-heading{
+  max-width:920px;
+  margin:0 0 46px;
+}
+.season-section--summer .season-heading h2{
+  font-family:Georgia,'Times New Roman',serif;
+  font-size:52px;
+  line-height:1.08;
+  font-weight:400;
+  margin:12px 0 18px;
+}
+.season-section--summer .season-heading p{
+  max-width:790px;
+  font-size:16px;
+  line-height:1.7;
+}
+.season-section--summer .destination-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:24px;
+}
+.season-section--summer .destination-card{
+  max-width:none;
+  min-width:0;
+}
+.season-section--summer .destination-photo{height:300px}
+.season-section--summer .destination-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.season-section--summer .destination-body{padding:27px 22px 30px}
+.season-section--summer .destination-body h3{font-size:28px}
+.season-section--summer .destination-body p{font-size:13px;line-height:1.62}
+.season-section--summer .destination-meta{font-size:11px}
+@media(max-width:1050px){
+  .season-section--summer .destination-grid{grid-template-columns:repeat(2,1fr)}
+  .season-section--summer .destination-photo{height:300px}
+}
+@media(max-width:680px){
+  .season-section--summer{padding:58px 20px 68px}
+  .season-section--summer .season-heading h2{font-size:38px}
+  .season-section--summer .destination-grid{grid-template-columns:1fr}
+  .season-section--summer .destination-photo{height:270px}
+}
+
+/* V2.14 — celoroční pěší & cyklo výlety */
+.okoli-v210 .season-section--yearround{
+  max-width:1180px;
+  margin:0 auto;
+  padding:72px 0 82px;
+  border-top:1px solid #e2ddd3;
+}
+.okoli-v210 .yearround-destination-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:28px;
+}
+.okoli-v210 .yearround-destination-grid .destination-photo{
+  height:390px;
+}
+.okoli-v210 .yearround-destination-grid .destination-photo--tower img{
+  width:100%; height:100%; object-fit:cover; object-position:center 38%;
+}
+.okoli-v210 .yearround-destination-grid .destination-body{
+  padding:30px 30px 32px;
+}
+.okoli-v210 .yearround-destination-grid h3{margin-bottom:5px;}
+.okoli-v210 .destination-subline{
+  margin:0 0 17px;
+  color:#b3873e;
+  font:600 13px Arial,Helvetica,sans-serif;
+  letter-spacing:.04em;
+}
+.okoli-v210 .destination-link-muted{
+  display:inline-block;
+  margin-top:22px;
+  color:#b3873e;
+  font:600 10px Arial,Helvetica,sans-serif;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  opacity:.58;
+}
+@media(max-width:900px){
+  .okoli-v210 .season-section--yearround{padding:54px 24px 64px;}
+  .okoli-v210 .yearround-destination-grid{grid-template-columns:1fr;}
+  .okoli-v210 .yearround-destination-grid .destination-photo{height:330px;}
+}
+
+/* V2.15 — four year-round destination cards */
+@media (min-width: 1100px){
+  .yearround-destination-grid{grid-template-columns:repeat(4,minmax(0,1fr));}
+}
+
+/* V2.16 — year-round cards aligned with winter section */
+.okoli-v210 .season-section--yearround{
+  max-width:1400px;
+}
+.okoli-v210 .yearround-destination-grid{
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:24px;
+}
+.okoli-v210 .yearround-destination-grid .destination-photo{
+  height:285px;
+}
+.okoli-v210 .yearround-destination-grid .destination-body{
+  padding:26px 26px 28px;
+}
+@media(max-width:1100px){
+  .okoli-v210 .yearround-destination-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media(max-width:700px){
+  .okoli-v210 .yearround-destination-grid{grid-template-columns:1fr;}
+  .okoli-v210 .yearround-destination-grid .destination-photo{height:270px;}
+}
+
+/* =========================================================
+   LENA V2.17 — CELOROČNÍ VÝLETY + STUDENEC
+   ========================================================= */
+
+/* Five year-round containers side by side on large screens. */
+.okoli-page .yearround-grid,
+.okoli-v210 .yearround-grid,
+.okoli-page .celorocne-grid,
+.okoli-v210 .celorocne-grid{
+  grid-template-columns:repeat(5,minmax(0,1fr)) !important;
+  gap:18px !important;
+}
+
+/* Fallback for the actual grid containing the new Studenec card. */
+.okoli-page .studenec-card-v217{
+  min-width:0;
+}
+.okoli-page .studenec-card-v217 .destination-photo{
+  height:300px;
+}
+.okoli-page .studenec-card-v217 .destination-body{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+.okoli-page .studenec-card-v217 .trip-attribute{
+  margin:0 0 15px;
+  color:#b28a46;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.okoli-page .studenec-card-v217 .destination-meta{
+  margin-top:auto;
+}
+
+/* Any grid that directly owns Studenec: force 5 columns on large desktop. */
+@media(min-width:1281px){
+  .okoli-page .studenec-card-v217{
+    grid-column:auto !important;
+  }
+  .okoli-page .studenec-card-v217:nth-child(n){
+    width:auto !important;
+  }
+}
+@media(max-width:1280px){
+  .okoli-page .yearround-grid,
+  .okoli-v210 .yearround-grid,
+  .okoli-page .celorocne-grid,
+  .okoli-v210 .celorocne-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  }
+}
+@media(max-width:900px){
+  .okoli-page .yearround-grid,
+  .okoli-v210 .yearround-grid,
+  .okoli-page .celorocne-grid,
+  .okoli-v210 .celorocne-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  }
+}
+@media(max-width:600px){
+  .okoli-page .yearround-grid,
+  .okoli-v210 .yearround-grid,
+  .okoli-page .celorocne-grid,
+  .okoli-v210 .celorocne-grid{
+    grid-template-columns:1fr !important;
+  }
+}
+
+/* =========================================================
+   LENA V2.18
+   ========================================================= */
+
+/* Praktické informace: undo the wide .story rule intended for Okolí. */
+.subpage:not(.okoli-page) .sub-hero{
+  max-width:1200px;
+  padding:72px 7vw 58px;
+}
+.subpage:not(.okoli-page) .story{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 7vw 90px;
+}
+.subpage:not(.okoli-page) .story-section{
+  grid-template-columns:minmax(250px,1fr) minmax(0,2fr);
+  gap:60px;
+}
+.subpage:not(.okoli-page) .story-copy{
+  max-width:760px;
+}
+
+/* Okolí: parent link typography 1:1 with right action, top and bottom. */
+.okoli-page .layer-nav__parent{
+  font-family:Arial,Helvetica,sans-serif !important;
+  font-size:10px !important;
+  font-weight:600 !important;
+  letter-spacing:.15em !important;
+  line-height:1.2 !important;
+  text-transform:uppercase !important;
+}
+.okoli-page .layer-nav--hero .layer-nav__parent{
+  color:#fff !important;
+}
+.okoli-page .layer-nav--bottom .layer-nav__parent{
+  color:#9a7739 !important;
+}
+
+/* Celoroční cards stay aligned to the winter card system: 4 across desktop. */
+.okoli-v210 .yearround-destination-grid{
+  grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+  gap:24px !important;
+}
+.okoli-v210 .yearround-destination-grid .destination-card{
+  min-width:0;
+}
+.okoli-v210 .yearround-destination-grid .destination-photo{
+  height:285px;
+}
+.okoli-v210 .yearround-destination-grid .destination-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+@media(max-width:1100px){
+  .okoli-v210 .yearround-destination-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}
+}
+@media(max-width:700px){
+  .okoli-v210 .yearround-destination-grid{grid-template-columns:1fr !important;}
+  .subpage:not(.okoli-page) .story-section{grid-template-columns:1fr;gap:16px;}
+}
+
+/* =========================================================
+   LENA V2.20
+   ========================================================= */
+
+/* Season buttons — subtle premium interaction */
+.okoli-v210 .season-tabs a,
+.okoli-v210 .season-tabs button,
+.okoli-v210 .season-filter a,
+.okoli-v210 .season-filter button,
+.okoli-v210 .season-nav a,
+.okoli-v210 .season-nav button{
+  transition:background-color .25s ease,color .25s ease,border-color .25s ease,transform .25s ease;
+}
+.okoli-v210 .season-tabs a:hover,
+.okoli-v210 .season-tabs button:hover,
+.okoli-v210 .season-filter a:hover,
+.okoli-v210 .season-filter button:hover,
+.okoli-v210 .season-nav a:hover,
+.okoli-v210 .season-nav button:hover{
+  background:#b89a62;
+  border-color:#b89a62;
+  color:#fff;
+  transform:translateY(-2px);
+}
+
+/* Year-round cards: keep meta + CTA on one common baseline. */
+.okoli-v210 .yearround-destination-grid .destination-body{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+.okoli-v210 .yearround-destination-grid .destination-body > p{
+  margin-bottom:24px;
+}
+.okoli-v210 .yearround-destination-grid .destination-meta{
+  margin-top:auto;
+}
+.okoli-v210 .yearround-destination-grid .destination-body > a{
+  margin-top:18px;
+}
+
+/* Panská skála icons match the other destination cards. */
+.okoli-v210 .yearround-destination-grid .destination-meta svg{
+  width:18px;
+  height:18px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.6;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+/* =========================================================
+   LENA V2.21 — České Švýcarsko
+   ========================================================= */
+.okoli-v210 .czech-switzerland-grid{
+  grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+  gap:24px !important;
+}
+.okoli-v210 .czech-switzerland-grid .destination-card{min-width:0;}
+.okoli-v210 .czech-switzerland-grid .destination-photo{height:285px;}
+.okoli-v210 .czech-switzerland-grid .destination-photo img{
+  width:100%;height:100%;object-fit:cover;
+}
+.okoli-v210 .czech-switzerland-grid .destination-body{
+  display:flex;flex-direction:column;height:100%;
+}
+.okoli-v210 .czech-switzerland-grid .destination-meta{margin-top:auto;}
+.okoli-v210 .destination-photo--placeholder{
+  display:flex;align-items:center;justify-content:center;
+  background:#f1eee7;border-bottom:1px solid #ded8cc;
+}
+.okoli-v210 .destination-photo--placeholder span{
+  font:600 10px/1 Arial,Helvetica,sans-serif;
+  letter-spacing:.18em;color:#a88b55;
+}
+.okoli-v210 .destination-card--prepared .destination-prepared-copy{
+  color:#8d8a83;font-style:italic;
+}
+@media(max-width:1100px){
+  .okoli-v210 .czech-switzerland-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}
+}
+@media(max-width:700px){
+  .okoli-v210 .czech-switzerland-grid{grid-template-columns:1fr !important;}
+}
+
+
+/* V2.25 — location map refinement */
+@media(min-width:1121px){
+  .locationSection{align-items:center!important;}
+  .location-map-real{align-self:center!important;}
+}
+.location-map-real::after{content:none!important;display:none!important;}
+
+/* V2.26 */
+.formStatus{min-height:18px;margin-top:4px;font-size:12px;line-height:1.45;text-align:center}.formStatus--success{color:#d7bd7a}.formStatus--error{color:#e7a19a}.inquiryForm .submitBtn:disabled{opacity:.65;cursor:wait;transform:none}
+
+/* V2.27 — homepage gallery collage */
+.galleryGridV227{display:grid;grid-template-columns:1.35fr .85fr .85fr;grid-template-rows:280px 280px;gap:12px;}
+.galleryGridV227 .gallery-tile{margin:0;min-width:0;overflow:hidden;background:#eeeae2;}
+.galleryGridV227 .gallery-tile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease,filter .5s ease;}
+.galleryGridV227 .gallery-tile:hover img{transform:scale(1.018);filter:contrast(1.02);}
+.galleryGridV227 .gallery-main{grid-row:1 / 3;}
+@media(max-width:1100px){.galleryGridV227{grid-template-columns:1fr 1fr;grid-template-rows:auto}.galleryGridV227 .gallery-main{grid-row:auto;grid-column:1 / 3;height:52vw;max-height:520px}.galleryGridV227 .gallery-tile:not(.gallery-main){height:30vw;min-height:240px}}
+@media(max-width:700px){.galleryGridV227{grid-template-columns:1fr;gap:8px}.galleryGridV227 .gallery-main{grid-column:auto;height:58vw;min-height:260px}.galleryGridV227 .gallery-tile:not(.gallery-main){height:58vw;min-height:250px}}
+
+/* V2.30 — availability calendar */
+.availability-v230{background:#f8f6f1;padding:92px 4vw 100px;border-top:1px solid rgba(36,38,37,.08)}
+.availability-v230-inner{max-width:1680px;margin:0 auto}
+.availability-v230-head{display:flex;align-items:flex-end;justify-content:space-between;gap:36px;margin-bottom:42px}
+.availability-v230 .kicker{color:#b89a62;margin-bottom:12px}
+.availability-v230 h2{font-size:clamp(42px,4vw,66px);line-height:1;margin:0 0 18px;color:#242625;font-weight:400}
+.availability-v230-copy{max-width:700px;margin:0;color:#66645f;line-height:1.7}
+.availability-v230-legend{display:flex;gap:26px;align-items:center;flex-wrap:wrap;font-size:13px;color:#55534e;padding-bottom:8px}
+.availability-v230-legend span{display:flex;align-items:center;gap:9px}.availability-v230-swatch{width:18px;height:18px;border:1px solid #dedbd3;background:#fff}.availability-v230-swatch.busy{background:#242625;border-color:#242625}
+.availability-v230-shell{position:relative;border-top:1px solid #d9d5cc;border-bottom:1px solid #d9d5cc;padding:38px 54px 42px}
+.availability-v230-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0}
+.availability-month{padding:0 20px;border-right:1px solid #dedbd3;min-width:0}.availability-month:last-child{border-right:0}
+.availability-month h3{font-family:Georgia,'Times New Roman',serif;font-size:22px;font-weight:400;text-align:center;margin:0 0 25px;color:#242625;white-space:nowrap}
+.availability-weekdays,.availability-days{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}.availability-weekdays{margin-bottom:7px}
+.availability-weekdays span{font-size:9px;letter-spacing:.08em;text-align:center;color:#96938c;text-transform:uppercase}
+.availability-day{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;font-size:12px;background:#fff;border:1px solid #e5e1d9;color:#242625;transition:.2s ease;min-width:0}
+.availability-day.empty{background:transparent;border-color:transparent}.availability-day.busy{background:#242625;border-color:#242625;color:#fff}.availability-day:not(.busy):not(.empty):hover{border-color:#b89a62;color:#9b7b43;transform:translateY(-1px)}
+.availability-nav{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;border:1px solid #d8d3c9;background:#fff;color:#242625;font-size:22px;line-height:1;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.05);transition:.2s ease;z-index:2}.availability-nav:hover{background:#b89a62;color:#fff;border-color:#b89a62}.availability-prev{left:0}.availability-next{right:0}
+.availability-v230-note{text-align:right;margin:22px 0 0;font-size:12px;color:#88847c}.availability-v230-note a{color:#9c7d47;text-decoration:none;border-bottom:1px solid rgba(156,125,71,.35)}
+@media(max-width:1350px){.availability-v230-grid{grid-template-columns:repeat(3,1fr);row-gap:38px}.availability-month:nth-child(3){border-right:0}.availability-month:nth-child(4),.availability-month:nth-child(5),.availability-month:nth-child(6){border-top:1px solid #dedbd3;padding-top:32px}}
+@media(max-width:760px){.availability-v230{padding:64px 5vw 72px}.availability-v230-head{display:block}.availability-v230-legend{margin-top:25px}.availability-v230-shell{padding:34px 36px}.availability-v230-grid{grid-template-columns:1fr}.availability-month{border-right:0!important;border-top:1px solid #dedbd3!important;padding:28px 0!important}.availability-month:first-child{border-top:0!important;padding-top:0!important}.availability-nav{top:28px;transform:none}.availability-prev{left:0}.availability-next{right:0}.availability-v230-note{text-align:left}}
+
+/* V2.31 — unified inquiry + availability, rolling six-month calendar */
+.availability-v230{background:#f5f2eb!important;border-top:0!important;padding:24px 6vw 100px!important;}
+.availability-v230-inner{max-width:none!important;margin:0!important;}
+.availability-v230-head{align-items:flex-end!important;margin-bottom:42px!important;}
+.availability-v230-head>div:first-child{max-width:760px;}
+.availability-v230-shell{padding-left:54px;padding-right:54px;}
+.availability-v230-grid{grid-template-columns:repeat(6,minmax(0,1fr))!important;row-gap:0!important;}
+.availability-month{border-top:0!important;padding:0 18px!important;}
+.availability-day.arrival,.availability-day.departure{color:#242625;border-color:#d8d3c9;}
+.availability-day.arrival{background:linear-gradient(135deg,#fff 0 49.5%,#242625 50.5% 100%);color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.55);}
+.availability-day.departure{background:linear-gradient(135deg,#242625 0 49.5%,#fff 50.5% 100%);color:#242625;text-shadow:0 1px 2px rgba(255,255,255,.9);}
+.availability-nav:disabled{opacity:.28;cursor:default;background:#fff!important;color:#242625!important;border-color:#d8d3c9!important;}
+.availability-v230-note{display:none!important;}
+@media(max-width:1350px){
+  .availability-v230-shell{overflow-x:auto;overflow-y:hidden;padding-left:46px;padding-right:46px;scrollbar-width:thin;}
+  .availability-v230-grid{min-width:1120px;}
+  .availability-month:nth-child(3){border-right:1px solid #dedbd3!important;}
+  .availability-month:nth-child(4),.availability-month:nth-child(5),.availability-month:nth-child(6){border-top:0!important;padding-top:0!important;}
+  .availability-nav{position:sticky;}
+}
+@media(max-width:760px){
+  .availability-v230{padding:22px 5vw 72px!important;}
+  .availability-v230-head{display:block!important;}
+  .availability-v230-shell{padding:28px 34px!important;}
+  .availability-v230-grid{min-width:1080px;grid-template-columns:repeat(6,180px)!important;}
+  .availability-month{border-right:1px solid #dedbd3!important;border-top:0!important;padding:0 16px!important;}
+}
+
+/* V2.32 — LENA gold availability palette */
+.availability-v230-swatch.busy{background:#b89a62;border-color:#b89a62}
+.availability-day.busy{background:#b89a62;border-color:#b89a62;color:#242625}
+.availability-day.arrival{background:linear-gradient(135deg,#fff 0 49.5%,#b89a62 50.5% 100%);color:#242625;text-shadow:none}
+.availability-day.departure{background:linear-gradient(135deg,#b89a62 0 49.5%,#fff 50.5% 100%);color:#242625;text-shadow:none}
+
+/* V2.33 — softer LENA availability calendar */
+.availability-weekdays,.availability-days{gap:7px!important;}
+.availability-weekdays{margin-bottom:9px!important;}
+.availability-day{
+  border-radius:6px!important;
+  border-color:#e7e1d6!important;
+  transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease,background .2s ease!important;
+}
+.availability-day.free{background:#fff!important;}
+.availability-day.busy{
+  background:#c5a76d!important;
+  border-color:#c5a76d!important;
+  color:#242625!important;
+}
+.availability-day.arrival{
+  border-color:#e1d8c8!important;
+  background:linear-gradient(135deg,#fff 0 49.5%,#c5a76d 50.5% 100%)!important;
+  color:#242625!important;
+}
+.availability-day.departure{
+  border-color:#e1d8c8!important;
+  background:linear-gradient(135deg,#c5a76d 0 49.5%,#fff 50.5% 100%)!important;
+  color:#242625!important;
+}
+.availability-day:not(.busy):not(.empty):hover{
+  border-color:#c5a76d!important;
+  color:#8d7040!important;
+  transform:translateY(-2px)!important;
+  box-shadow:0 4px 12px rgba(36,38,37,.05)!important;
+}
+.availability-v230-swatch{border-radius:4px!important;border-color:#e1dbd0!important;}
+.availability-v230-swatch.busy{background:#c5a76d!important;border-color:#c5a76d!important;}
+/* Deliberately preserve the subtle vertical separators between months. */
+.availability-month{border-right-color:#dedbd3!important;}
+
+/* V2.34 TEST — floating / detached desktop header */
+@media (min-width:1121px){
+  nav.main-nav.lena-nav{
+    position:sticky!important;
+    top:0!important;
+    z-index:1000!important;
+    width:100%!important;
+    margin:0!important;
+    border-radius:0!important;
+    border:1px solid transparent!important;
+    box-shadow:none!important;
+    transition:top .34s ease,width .34s ease,margin .34s ease,height .34s ease,min-height .34s ease,padding .34s ease,border-radius .34s ease,box-shadow .34s ease,background-color .34s ease,border-color .34s ease!important;
+  }
+  nav.main-nav.lena-nav .lena-selected-logo.header-logo,
+  nav.main-nav.lena-nav .lena-selected-logo.header-logo img,
+  nav.main-nav.lena-nav .header-brand-claim,
+  nav.main-nav.lena-nav .desktop-links.lena-desktop-nav a{
+    transition:width .34s ease,height .34s ease,max-height .34s ease,flex-basis .34s ease,opacity .25s ease,margin .34s ease,padding .34s ease,font-size .34s ease!important;
+  }
+  body.lena-header-floating nav.main-nav.lena-nav{
+    top:14px!important;
+    width:calc(100% - 8vw)!important;
+    height:70px!important;
+    min-height:70px!important;
+    margin:0 4vw!important;
+    padding:0 24px!important;
+    border-radius:18px!important;
+    background:rgba(255,255,255,.96)!important;
+    border-color:rgba(184,154,98,.16)!important;
+    box-shadow:0 12px 34px rgba(36,38,37,.12)!important;
+    backdrop-filter:blur(12px)!important;
+    -webkit-backdrop-filter:blur(12px)!important;
+  }
+  body.lena-header-floating nav.main-nav.lena-nav .lena-selected-logo.header-logo{
+    width:124px!important;
+    height:58px!important;
+    flex-basis:124px!important;
+  }
+  body.lena-header-floating nav.main-nav.lena-nav .lena-selected-logo.header-logo img{
+    width:124px!important;
+    max-height:58px!important;
+  }
+  body.lena-header-floating nav.main-nav.lena-nav .header-brand-claim{
+    opacity:0!important;
+    width:0!important;
+    max-width:0!important;
+    margin-left:0!important;
+    padding-left:0!important;
+    border-left:0!important;
+    overflow:hidden!important;
+    white-space:nowrap!important;
+  }
+  body.lena-header-floating nav.main-nav.lena-nav .desktop-links.lena-desktop-nav{
+    gap:20px!important;
+  }
+  body.lena-header-floating nav.main-nav.lena-nav .desktop-links.lena-desktop-nav a{
+    font-size:11px!important;
+  }
+  body.lena-header-floating nav.main-nav.lena-nav .desktop-links.lena-desktop-nav .navcta{
+    padding:12px 18px!important;
+    border-radius:999px!important;
+  }
+}
+
+/* V2.35 TEST — true detached frosted-glass header */
+@media (min-width:1121px){
+  .lena-header-spacer{display:none;height:0;}
+  body.lena-header-floating .lena-header-spacer{display:block;height:100px;}
+  body.lena-header-floating nav.main-nav.lena-nav{
+    position:fixed!important;
+    top:20px!important;
+    left:5vw!important;
+    right:5vw!important;
+    width:90vw!important;
+    margin:0!important;
+    height:70px!important;
+    min-height:70px!important;
+    padding:0 24px!important;
+    border-radius:22px!important;
+    background:rgba(255,255,255,.58)!important;
+    border:1px solid rgba(255,255,255,.42)!important;
+    box-shadow:0 12px 34px rgba(25,25,22,.14)!important;
+    backdrop-filter:blur(22px) saturate(125%)!important;
+    -webkit-backdrop-filter:blur(22px) saturate(125%)!important;
+    overflow:hidden!important;
+  }
+}
+
+/* V2.37 — slightly larger desktop navigation labels; CTA unchanged */
+@media (min-width:1121px){
+  nav.main-nav.lena-nav .desktop-links.lena-desktop-nav a:not(.navcta){
+    font-size:16px!important;
+  }
+  body.lena-header-floating nav.main-nav.lena-nav .desktop-links.lena-desktop-nav a:not(.navcta){
+    font-size:16px!important;
+  }
+}
