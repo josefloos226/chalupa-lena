@@ -1,0 +1,12 @@
+LENA V3.2 – PŘIPRAVENÁ INTEGRACE (zatím není aktivovaná)
+
+Web nyní stále používá ověřený FormSubmit z V3.1. Nové odesílání se aktivuje až po nastavení serveru.
+
+1. Založit Resend účet, ověřit doménu chalupa-lena.cz podle DNS záznamů z Resend (u WEDOS). NEMĚNIT existující MX záznamy pro příjem pošty.
+2. Založit Cloudflare účet a Worker (samostatný server, GitHub Pages zůstává). Nahrát backend/worker.js.
+3. Nastavit Worker secret RESEND_API_KEY; nikdy jej nevkládat do HTML nebo GitHubu.
+4. Ochrana před spamem: před ostrým spuštěním nastavit Cloudflare Turnstile, tajný TURNSTILE_SECRET ve Workeru a vložit widget do formuláře; případně přidat Cloudflare rate limiting. Bez ochrany může veřejný endpoint někdo zneužít k odesílání e-mailů.
+5. Až je Worker připraven a zabezpečen, do index.html ve formuláři vyplnit data-worker-url="https://...workers.dev". Prázdná hodnota = fungující FormSubmit fallback.
+6. Otestovat příjem na info@chalupa-lena.cz a potvrzení na testovací osobní e-mail. Teprve poté publikovat.
+
+Upozornění: Resend může vyžadovat ověření domény a schválení účtu. Provozní limity a ceny ověřte u poskytovatelů. V případě selhání druhého e-mailu po úspěšném prvním může vzniknout poptávka bez potvrzení; produkčně doporučujeme přidat frontu/opakování a idempotenci.
