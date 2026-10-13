@@ -211,7 +211,7 @@ Uvnitř vás čeká velký společný prostor, čtyři pokoje a kouzlo 200 let s
 <div><span>LOKALITA</span><strong>Dolní Chřibská</strong></div>
 </div>
 </div>
-<form action="https://formsubmit.co/info@chalupa-lena.cz" class="inquiryForm" id="lenaInquiryForm" method="POST"><input autocomplete="off" name="_honey" style="display:none" tabindex="-1" type="text"/><input name="_url" type="hidden" value="https://josefloos226.github.io/chalupa-lena/"/><input name="_template" type="hidden" value="table"/><input name="_subject" type="hidden" value="Nová nezávazná poptávka – Chalupa LENA"/><input name="_autoresponse" type="hidden" value="Dobrý den,
+<form action="https://formsubmit.co/ajax/info@chalupa-lena.cz" class="inquiryForm" id="lenaInquiryForm" method="POST"><input autocomplete="off" name="_honey" style="display:none" tabindex="-1" type="text"/><input name="_url" type="hidden" value="https://josefloos226.github.io/chalupa-lena/"/><input name="_template" type="hidden" value="table"/><input name="_subject" type="hidden" value="Nová nezávazná poptávka – Chalupa LENA"/><input name="_autoresponse" type="hidden" value="Dobrý den,
 
 děkujeme za váš zájem o pobyt v Chalupě LENA.
 
@@ -233,7 +233,7 @@ info@chalupa-lena.cz"/>
 <label class="consent full"><input name="Souhlas se zpracováním údajů" required="" type="checkbox" value="Ano"/> Souhlasím se zpracováním osobních údajů pro účely vyřízení poptávky.</label>
 <button class="submitBtn full" type="submit">Odeslat nezávaznou poptávku →</button>
 <div aria-live="polite" class="full formStatus" id="formStatus" role="status"></div><small class="full formNote">Odpovídáme zpravidla do 24 hodin. Nezávazně — žádný spam.</small>
-</form>
+</form><script>document.addEventListener('DOMContentLoaded',()=>{const f=document.getElementById('lenaInquiryForm'),b=f?.querySelector('.submitBtn'),s=document.getElementById('formStatus'),o=b?.textContent||'';if(!f)return;f.addEventListener('submit',async e=>{e.preventDefault();if(!f.checkValidity()){f.reportValidity();return}if(b){b.disabled=true;b.textContent='Odesílám…'}if(s){s.textContent='';s.className='full formStatus'}try{const r=await fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}});const d=await r.json().catch(()=>({}));if(!r.ok||d.success===false||d.success==='false')throw new Error();f.reset();if(s){s.textContent='Děkujeme. Vaše nezávazná poptávka byla odeslána. Potvrzení vám přijde e-mailem. Termín pobytu zatím není rezervován.';s.className='full formStatus formStatus--success'}}catch(x){if(s){s.textContent='Poptávku se nepodařilo odeslat. Zkuste to prosím znovu nebo nás kontaktujte telefonicky.';s.className='full formStatus formStatus--error'}}finally{if(b){b.disabled=false;b.textContent=o}}})});</script>
 </section>
 <section class="availability-v230" id="dostupnost">
   <div class="availability-v230-inner">
