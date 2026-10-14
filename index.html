@@ -211,7 +211,7 @@ Uvnitř vás čeká velký společný prostor, čtyři pokoje a kouzlo 200 let s
 <div><span>LOKALITA</span><strong>Dolní Chřibská</strong></div>
 </div>
 </div>
-<form action="https://formsubmit.co/ajax/info@chalupa-lena.cz" data-worker-url="" class="inquiryForm" id="lenaInquiryForm" method="POST"><input autocomplete="off" name="_honey" style="display:none" tabindex="-1" type="text"/><input name="_url" type="hidden" value="https://josefloos226.github.io/chalupa-lena/"/><input name="_template" type="hidden" value="table"/><input name="_subject" type="hidden" value="Nová nezávazná poptávka – Chalupa LENA"/>
+<form action="https://chalupa-lena-form.josef-loos226.workers.dev/" class="inquiryForm" id="lenaInquiryForm" method="POST"><input autocomplete="off" name="_honey" style="display:none" tabindex="-1" type="text"/>
 <label class="full">Jméno a příjmení *<input autocomplete="name" name="Jméno a příjmení" placeholder="Vaše jméno" required=""/></label>
 <label>Telefon<input autocomplete="tel" name="Telefon" placeholder="+420 ..." type="tel"/></label>
 <label>E-mail *<input autocomplete="email" name="email" placeholder="vas@email.cz" required="" type="email"/></label>
@@ -221,7 +221,63 @@ Uvnitř vás čeká velký společný prostor, čtyři pokoje a kouzlo 200 let s
 <label class="consent full"><input name="Souhlas se zpracováním údajů" required="" type="checkbox" value="Ano"/> Souhlasím se zpracováním osobních údajů pro účely vyřízení poptávky.</label>
 <button class="submitBtn full" type="submit">Odeslat nezávaznou poptávku →</button>
 <div aria-live="polite" class="full formStatus" id="formStatus" role="status"></div><small class="full formNote">Odpovídáme zpravidla do 24 hodin. Nezávazně — žádný spam.</small>
-</form><script>document.addEventListener('DOMContentLoaded',()=>{const f=document.getElementById('lenaInquiryForm'),b=f?.querySelector('.submitBtn'),s=document.getElementById('formStatus'),o=b?.textContent||'';if(!f)return;f.addEventListener('submit',async e=>{e.preventDefault();if(!f.checkValidity()){f.reportValidity();return}if(b){b.disabled=true;b.textContent='Odesílám…'}if(s){s.textContent='';s.className='full formStatus'}try{const worker=f.dataset.workerUrl?.trim();const r=await fetch(worker||f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}});const d=await r.json().catch(()=>({}));if(!r.ok||d.success===false||d.success==='false')throw new Error();f.reset();if(s){s.textContent=worker?'Děkujeme. Vaši poptávku jsme přijali a odeslali vám potvrzení na e-mail. Brzy se ozveme. Rezervace zatím není potvrzená.':'Děkujeme. Vaše nezávazná poptávka byla úspěšně odeslána. Brzy se vám ozveme ohledně dostupnosti termínu. Odesláním poptávky zatím nevzniká rezervace.';s.className='full formStatus formStatus--success'}}catch(x){if(s){s.textContent='Poptávku se nepodařilo odeslat. Zkuste to prosím znovu nebo nás kontaktujte telefonicky.';s.className='full formStatus formStatus--error'}}finally{if(b){b.disabled=false;b.textContent=o}}})});</script>
+</form>
+<script>
+/* LENA V3.3 – single submission to Cloudflare Worker (Resend). */
+(function () {
+  const form = document.getElementById('lenaInquiryForm');
+  if (!form) return;
+  const endpoint = 'https://chalupa-lena-form.josef-loos226.workers.dev/';
+  const status = document.getElementById('formStatus');
+  const button = form.querySelector('button[type="submit"]');
+  let sending = false;
+
+  form.addEventListener('submit', async function (event) {
+    event.preventDefault();
+    if (sending || !form.reportValidity()) return;
+    const formData = new FormData(form);
+    if (String(formData.get('_honey') || '').trim()) return;
+    const name = String(formData.get('Jméno a příjmení') || '').trim();
+    const email = String(formData.get('email') || '').trim();
+    const phone = String(formData.get('Telefon') || '').trim();
+    const dates = String(formData.get('Termín pobytu') || '').trim();
+    const guests = String(formData.get('Počet hostů') || '').trim();
+    const message = String(formData.get('Zpráva') || '').trim();
+
+    // Send one form-urlencoded POST; aliases keep the existing Worker compatible.
+    const payload = new URLSearchParams({
+      name, email, phone, dates, guests, message,
+      jmeno: name, termin: dates, pocet_hostu: guests, zprava: message,
+      'Jméno a příjmení': name, 'Telefon': phone,
+      'Termín pobytu': dates, 'Počet hostů': guests, 'Zpráva': message,
+      'Souhlas se zpracováním údajů': 'Ano'
+    });
+    sending = true;
+    button.disabled = true;
+    const originalText = button.textContent;
+    button.textContent = 'Odesíláme poptávku…';
+    status.textContent = '';
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: payload.toString()
+      });
+      let result = null;
+      try { result = await response.json(); } catch (_) { /* HTTP status still applies */ }
+      if (!response.ok || (result && result.ok === false)) throw new Error('Submission failed');
+      form.reset();
+      status.textContent = 'Děkujeme. Vaše nezávazná poptávka byla úspěšně odeslána. Brzy se vám ozveme ohledně dostupnosti termínu. Odesláním poptávky zatím nevzniká rezervace.';
+    } catch (error) {
+      status.textContent = 'Poptávku se nepodařilo odeslat. Zkuste to prosím znovu nebo nám napište na info@chalupa-lena.cz.';
+    } finally {
+      sending = false;
+      button.disabled = false;
+      button.textContent = originalText;
+    }
+  });
+})();
+</script>
 </section>
 <section class="availability-v230" id="dostupnost">
   <div class="availability-v230-inner">
