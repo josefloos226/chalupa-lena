@@ -3967,3 +3967,10 @@ body.okoli-page .story .season-section--placeholder,
     font-size:16px!important;
   }
 }
+
+/* LENA V3.4 - elegant gold inquiry success feedback */
+.inquiryForm .lenaFormFeedback.formStatus--success{display:flex;align-items:flex-start;gap:14px;text-align:left;margin-top:15px;padding:17px 19px;min-height:0;border:1px solid rgba(201,164,95,.48);border-radius:12px;background:rgba(201,164,95,.065);color:#ede7dc;box-sizing:border-box}
+.lenaFormFeedback__icon{flex:0 0 27px;width:27px;height:27px;display:flex;align-items:center;justify-content:center;border:1.5px solid #c9a45f;border-radius:50%;color:#c9a45f;font-size:16px;font-weight:700;line-height:1}
+.lenaFormFeedback__body{display:flex;flex-direction:column;gap:5px;min-width:0;font-size:13px;line-height:1.65;color:#e9e5dc}
+.lenaFormFeedback__body strong{font-size:15px;font-weight:650;line-height:1.4;color:#d5b474}
+.inquiryForm .formStatus:empty{display:none}

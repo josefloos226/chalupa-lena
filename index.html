@@ -256,7 +256,8 @@ Uvnitř vás čeká velký společný prostor, čtyři pokoje a kouzlo 200 let s
     button.disabled = true;
     const originalText = button.textContent;
     button.textContent = 'Odesíláme poptávku…';
-    status.textContent = '';
+    status.className = 'full formStatus';
+    status.replaceChildren();
     try {
       const response = await fetch(endpoint, {
         method: 'POST',
@@ -267,8 +268,12 @@ Uvnitř vás čeká velký společný prostor, čtyři pokoje a kouzlo 200 let s
       try { result = await response.json(); } catch (_) { /* HTTP status still applies */ }
       if (!response.ok || (result && result.ok === false)) throw new Error('Submission failed');
       form.reset();
-      status.textContent = 'Děkujeme. Vaše nezávazná poptávka byla úspěšně odeslána. Brzy se vám ozveme ohledně dostupnosti termínu. Odesláním poptávky zatím nevzniká rezervace.';
+      status.className = 'full formStatus formStatus--success lenaFormFeedback';
+      status.innerHTML = '<span class="lenaFormFeedback__icon" aria-hidden="true">✓</span>' +
+        '<span class="lenaFormFeedback__body"><strong>Poptávka byla úspěšně odeslána</strong>' +
+        '<span>Děkujeme za váš zájem. Potvrzení jsme vám zaslali na e-mail a brzy se vám ozveme.</span></span>';
     } catch (error) {
+      status.className = 'full formStatus formStatus--error';
       status.textContent = 'Poptávku se nepodařilo odeslat. Zkuste to prosím znovu nebo nám napište na info@chalupa-lena.cz.';
     } finally {
       sending = false;
