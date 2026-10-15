@@ -65,7 +65,7 @@ Uvnitř vás čeká velký společný prostor, čtyři pokoje a kouzlo 200 let s
 <div class="quick quick-hospitality">
 <div><strong>1</strong><span>chalupa jen pro vás</span></div>
 <div><strong>4</strong><span>pokoje</span></div>
-<div><strong>až 12</strong><span>lůžek</span></div>
+<div><strong>až 10</strong><span>lůžek</span></div>
 <div><strong>2×</strong><span>koupelny / WC</span></div>
 <div><strong>&gt; 800 m²</strong><span>zahrada</span></div>
 <div><strong>4×</strong><span>parkování</span></div>
@@ -332,7 +332,7 @@ Uvnitř vás čeká velký společný prostor, čtyři pokoje a kouzlo 200 let s
  }
  function render(){
    root.innerHTML='';
-   for(let i=0;i<6;i++){
+   for(let i=0;i<(window.matchMedia('(max-width:760px)').matches?1:6);i++){
      const dt=new Date(start.getFullYear(),start.getMonth()+i,1),y=dt.getFullYear(),m=dt.getMonth();
      const box=document.createElement('article'); box.className='availability-month';
      const h=document.createElement('h3'); h.textContent=`${names[m]} ${y}`; box.appendChild(h);
@@ -358,6 +358,9 @@ Uvnitř vás čeká velký společný prostor, čtyři pokoje a kouzlo 200 let s
    if(candidate>=currentMonth){start=candidate;render()}
  });
  document.querySelector('.availability-next')?.addEventListener('click',()=>{start=new Date(start.getFullYear(),start.getMonth()+1,1);render()});
+ let mobileCalendar=window.matchMedia('(max-width:760px)');
+ if(mobileCalendar.addEventListener) mobileCalendar.addEventListener('change',render);
+ else if(mobileCalendar.addListener) mobileCalendar.addListener(render);
  render();
 })();
 </script>
