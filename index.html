@@ -312,12 +312,14 @@ Uvnitř vás čeká velký společný prostor, čtyři pokoje a kouzlo 200 let s
  const now=new Date();
  const currentMonth=new Date(now.getFullYear(),now.getMonth(),1);
  let start=new Date(currentMonth);
- // V2.31 demo pobyty. Později nahradíme synchronizací dostupnosti z e-chalupy.
+ // Ručně potvrzené pobyty k 16. 10. 2026; budoucí iCal synchronizace s eChalupy.
  // První den pobytu = příjezd (odpoledne obsazeno), poslední = odjezd (dopoledne obsazeno).
  const stays=[
-  ['2026-10-12','2026-10-18'],['2026-10-19','2026-10-28'],['2026-10-30','2026-11-01'],
-  ['2026-12-24','2026-12-28'],['2026-12-30','2027-01-03'],['2027-01-15','2027-01-17'],
-  ['2027-02-06','2027-02-14'],['2027-03-12','2027-03-14'],['2027-04-02','2027-04-05'],['2027-05-01','2027-05-02'],['2027-05-07','2027-05-09']
+  ['2026-10-12','2026-10-18'],
+  ['2026-10-19','2026-10-28'],
+  ['2026-10-30','2026-11-01'],
+  ['2027-05-05','2027-05-09'],
+  ['2027-05-12','2027-05-16']
  ];
  const iso=(y,m,d)=>`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
  function stateFor(y,m,d){
@@ -426,4 +428,14 @@ Uvnitř vás čeká velký společný prostor, čtyři pokoje a kouzlo 200 let s
 </div>
 </footer>
 <!-- V0.31: sjednocení značky na Chalupa LENA / LENA -->
+<script>
+/* Honor subpage links to the equipment section, including Safari history restore. */
+(function(){
+  if(location.hash!=='#vybaveni') return;
+  window.addEventListener('load',function(){
+    var target=document.getElementById('vybaveni');
+    if(target) window.setTimeout(function(){target.scrollIntoView({block:'start',behavior:'instant'});},100);
+  });
+})();
+</script>
 </body></html>
