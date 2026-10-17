@@ -4056,3 +4056,31 @@ body.okoli-page .story .season-section--placeholder,
     box-sizing:border-box!important;
   }
 }
+
+/* LENA V3.6.6 – social links and opaque sticky mobile header */
+.lena-social-desktop,.lena-social-mobile{display:flex;align-items:center;gap:13px;flex:0 0 auto}
+.lena-social-link{display:inline-flex;align-items:center;justify-content:center;width:30px;height:36px;flex:0 0 auto;color:#242625;text-decoration:none;transition:color .2s ease,transform .2s ease}
+.lena-social-link svg{display:block;width:21px;height:21px}
+.lena-social-link:hover{color:#b89a62;transform:translateY(-1px)}
+.lena-social-link:focus-visible{outline:2px solid #b89a62;outline-offset:2px;border-radius:3px}
+@media(min-width:1121px){
+  .lena-social-mobile{display:none!important}
+  .desktop-links.lena-desktop-nav .lena-social-desktop{margin-right:9px}
+  nav.main-nav.lena-nav .lena-social-link{padding:0!important}
+}
+@media(max-width:1120px){
+  nav.main-nav.lena-nav{position:sticky!important;top:0!important;background:#fff!important;z-index:6000!important;box-shadow:0 2px 10px rgba(0,0,0,.06)!important}
+  .lena-social-desktop{display:none!important}
+  .lena-social-mobile{display:flex!important;gap:7px!important}
+  .lena-social-mobile .lena-social-link{width:34px;height:42px}
+  .lena-social-mobile .lena-social-link svg{width:21px;height:21px}
+  nav.main-nav.lena-nav .mobile-head-controls{gap:8px!important}
+  nav.main-nav.lena-nav .mobile-langs{display:none!important}
+  nav.main-nav.lena-nav .mobile-menu{top:92px!important;z-index:5999!important}
+  html{scroll-padding-top:98px}
+}
+@media(max-width:760px){
+  nav.main-nav.lena-nav{height:76px!important;min-height:76px!important}
+  nav.main-nav.lena-nav .mobile-menu{top:76px!important}
+  html{scroll-padding-top:82px}
+}
