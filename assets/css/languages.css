@@ -18,3 +18,12 @@
 }
 html[lang="en"] .header-brand-claim{font-size:9px}
 .lena-thanks-language{justify-content:center;margin-bottom:20px}
+
+/* Keep the language control in the same flex group as the enquiry button. */
+@media(min-width:1121px){
+ nav.main-nav.lena-nav .desktop-links.lena-desktop-nav > .lena-desktop-language{display:flex!important;flex:0 0 auto!important;align-items:center!important;gap:7px!important;margin-left:0!important;margin-right:0!important;padding-left:20px!important;border-left:1px solid #d8d3c9!important}
+ nav.main-nav.lena-nav .desktop-links.lena-desktop-nav .lena-desktop-language a{font:400 13px/1 Arial,Helvetica,sans-serif!important;color:#6b6b65!important;letter-spacing:.05em!important;padding:0 3px!important;min-height:40px!important;text-decoration:none!important;transform:none!important}
+ nav.main-nav.lena-nav .desktop-links.lena-desktop-nav .lena-desktop-language a.active{font-weight:700!important;color:#242625!important}
+ nav.main-nav.lena-nav .desktop-links.lena-desktop-nav .lena-desktop-language a::after{content:none!important}
+ nav.main-nav.lena-nav .desktop-links.lena-desktop-nav .lena-desktop-language a:hover{text-decoration:underline!important;text-underline-offset:4px}
+}
