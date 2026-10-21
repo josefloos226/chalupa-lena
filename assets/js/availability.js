@@ -7,16 +7,16 @@
  const now=new Date();
  const currentMonth=new Date(now.getFullYear(),now.getMonth(),1);
  let start=new Date(currentMonth);
- // Ručně potvrzené pobyty k 17. 10. 2026; budoucí iCal synchronizace s eChalupy.
+ // Obsazenost podle dodaných snímků k 21. 10. 2026; budoucí iCal synchronizace s eChalupy.
  // První den pobytu = příjezd (odpoledne obsazeno), poslední = odjezd (dopoledne obsazeno).
  const stays=[
   ['2026-10-12','2026-10-18'],
   ['2026-10-19','2026-10-28'],
-  ['2026-10-30','2026-11-01'],
+  ['2026-10-29','2026-11-01'],
   ['2026-12-18','2026-12-21'],
-  ['2026-12-23','2026-12-27'],
   ['2026-12-28','2027-01-02'],
-  ['2027-03-26','2027-03-29'],
+  ['2027-03-21','2027-03-25'],
+  ['2027-03-26','2027-04-05'],
   ['2027-05-05','2027-05-09'],
   ['2027-05-12','2027-05-16']
  ];

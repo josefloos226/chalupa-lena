@@ -93,3 +93,10 @@ V2.34 — experimental floating/detached desktop header based on V2.33.
 V2.37
 - Fixed JavaScript parse error caused by a standalone locale JSON object at the start of assets/js/main.js.
 - Floating frosted-glass header test from V2.35 is otherwise unchanged.
+
+
+## V3.8.4 – mobilní galerie a informace o vybavení
+- Na úvodní stránce CZ/EN doplněny explicitní mobilní styly galerie tak, aby se tři nově přidané fotografie zobrazovaly také na telefonech.
+- Aktualizována verze CSS odkazu kvůli načtení změn i na telefonech s uloženou cache.
+- Z české a anglické stránky Praktické informace odstraněny zmínky o vířivce, ostatní vybavení zůstává beze změny.
+- Kalendář, dostupnost, formulář, již označené pokoje a ostatní fotky zůstávají převzaty z V3.8.3 beze změny.
