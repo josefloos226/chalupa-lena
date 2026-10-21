@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.chalupa-lena.cz/sitemap.xml
+Sitemap: https://www.chalupa-lena.cz/sitemap.txt
