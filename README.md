@@ -100,3 +100,17 @@ V2.37
 - Aktualizována verze CSS odkazu kvůli načtení změn i na telefonech s uloženou cache.
 - Z české a anglické stránky Praktické informace odstraněny zmínky o vířivce, ostatní vybavení zůstává beze změny.
 - Kalendář, dostupnost, formulář, již označené pokoje a ostatní fotky zůstávají převzaty z V3.8.3 beze změny.
+
+
+## V3.8.5 – příprava ostrého provozu www.chalupa-lena.cz
+- Odstraněn nefunkční odkaz „Prohlédnout galerii →“ v CZ i „View gallery →“ v EN; bez rozdílu PC/mobil.
+- Přidán `CNAME` pro GitHub Pages a `.nojekyll`.
+- Zachována galerie, fotografie, oba jazyky, kontaktní formulář a stávající rezervace.
+- Odstraněny pouze dočasné nedokončené kopie velkých obrázků `.png.XXXXXX`.
+
+### Nasazení
+1. Do kořene repozitáře `josefloos226/chalupa-lena` nahrajte **OBSAH** složky `chalupa-lena/` (nikoliv další vnořenou složku).
+2. V GitHub `Settings > Pages > Custom domain` zadejte `www.chalupa-lena.cz`, potvrďte.
+3. Ve WEDOS DNS nastavte `www` CNAME na `josefloos226.github.io.` a kořenové A (Název nevyplněn) na čtyři IP GitHub Pages: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`.
+4. Ponechte beze změny záznamy pro e-maily (MX, SPF/DKIM/DMARC, TXT) a přepněte HTTPS Enforce po vydání certifikátu.
+5. Ověřte CZ/EN, galerii na mobilu, kalendář, doručení testovací poptávky.
