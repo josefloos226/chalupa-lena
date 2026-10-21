@@ -46,6 +46,9 @@
       try { result = await response.json(); } catch (_) { /* HTTP status still applies */ }
       if (!response.ok || (result && result.ok === false)) throw new Error('Submission failed');
       form.reset();
+      if (typeof window.lenaTrackEvent === 'function') {
+        window.lenaTrackEvent('generate_lead', { method: 'website_enquiry', language: en ? 'en' : 'cs' });
+      }
       status.className = 'full formStatus formStatus--success lenaFormFeedback';
       status.innerHTML = '<span class="lenaFormFeedback__icon" aria-hidden="true">✓</span>' +
         '<span class="lenaFormFeedback__body"><strong>' + (en ? 'Thank you for your enquiry!' : 'Děkujeme za vaši poptávku!') + '</strong>' +
