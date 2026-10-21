@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.chalupa-lena.cz/</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.chalupa-lena.cz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.chalupa-lena.cz/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.chalupa-lena.cz/"/>
+  </url>
+  <url>
+    <loc>https://www.chalupa-lena.cz/en/</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.chalupa-lena.cz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.chalupa-lena.cz/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.chalupa-lena.cz/"/>
+  </url>
+  <url>
+    <loc>https://www.chalupa-lena.cz/okoli.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.chalupa-lena.cz/okoli.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.chalupa-lena.cz/en/okoli.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.chalupa-lena.cz/okoli.html"/>
+  </url>
+  <url>
+    <loc>https://www.chalupa-lena.cz/en/okoli.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.chalupa-lena.cz/okoli.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.chalupa-lena.cz/en/okoli.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.chalupa-lena.cz/okoli.html"/>
+  </url>
+  <url>
+    <loc>https://www.chalupa-lena.cz/prakticke-informace.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.chalupa-lena.cz/prakticke-informace.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.chalupa-lena.cz/en/prakticke-informace.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.chalupa-lena.cz/prakticke-informace.html"/>
+  </url>
+  <url>
+    <loc>https://www.chalupa-lena.cz/en/prakticke-informace.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.chalupa-lena.cz/prakticke-informace.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.chalupa-lena.cz/en/prakticke-informace.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.chalupa-lena.cz/prakticke-informace.html"/>
   </url>
 </urlset>
