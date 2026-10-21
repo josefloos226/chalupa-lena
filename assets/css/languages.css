@@ -16,7 +16,7 @@
  nav.main-nav.lena-nav .mobile-langs a.active{color:#242625!important}
  nav.main-nav.lena-nav .mobile-head-controls{gap:10px!important}
 }
-html[lang="en"] .header-brand-claim{font-size:9px}
+
 .lena-thanks-language{justify-content:center;margin-bottom:20px}
 
 /* Keep the language control in the same flex group as the enquiry button. */
