@@ -4132,3 +4132,28 @@ body.okoli-page .story .season-section--placeholder,
     object-fit:cover;
   }
 }
+
+
+/* LENA v3.8.9 — subtle, useful local SEO text; content-first and responsive */
+.lena-local-seo{padding:82px 6vw 86px;background:var(--ivory);border-top:1px solid var(--line)}
+.lena-local-seo__inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:7vw;align-items:start}
+.lena-local-seo__eyebrow{display:block;margin-bottom:18px;color:#947746;font:600 11px/1.5 Arial,Helvetica,sans-serif;letter-spacing:.17em}
+.lena-local-seo h2{font:400 clamp(34px,3.5vw,55px)/1.12 Georgia,'Times New Roman',serif;letter-spacing:-.02em;margin:0;max-width:610px}
+.lena-local-seo__body p{color:#68655d;font-size:15px;line-height:1.85;margin:0 0 19px}
+.lena-local-seo__body strong{font-weight:600;color:#3d3b35}
+.lena-local-seo__links{display:flex;flex-wrap:wrap;gap:16px 28px;margin-top:26px;height:auto;min-height:0;padding:0;background:transparent;align-items:flex-start;justify-content:flex-start}
+.lena-local-seo__links a{font-size:12px;line-height:1.5;letter-spacing:.02em;color:#8d7144;text-decoration:none;border-bottom:1px solid #c3aa7c;padding-bottom:6px}
+.lena-local-seo__links a:hover{text-decoration:underline;text-underline-offset:4px}
+.lena-seo-context-paragraph{max-width:760px;line-height:1.75}
+.lena-seo-context-paragraph a,.lena-seo-summary a{color:#8d7144;text-decoration:underline;text-underline-offset:3px}
+.lena-seo-summary{max-width:840px;margin:0 0 58px}
+.lena-seo-summary h2{font:400 clamp(26px,2.8vw,38px)/1.24 Georgia,'Times New Roman',serif;margin:0 0 16px;color:#333}
+.lena-seo-summary p{font-size:15px;line-height:1.84;color:#666;margin:0}
+@media(max-width:780px){
+ .lena-local-seo{padding:59px 6vw 62px}
+ .lena-local-seo__inner{grid-template-columns:1fr;gap:25px}
+ .lena-local-seo h2{font-size:clamp(32px,8vw,45px)}
+ .lena-local-seo__body p{font-size:14px}
+ .lena-local-seo__links{gap:15px 24px}
+ .lena-seo-summary{margin-bottom:36px}
+}
