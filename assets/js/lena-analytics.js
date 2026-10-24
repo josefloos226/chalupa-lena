@@ -5,7 +5,7 @@
   const measurementId = 'G-7X0S3GPS47';
   const key = 'lena_analytics_consent_v1';
   const isEnglish = document.documentElement.lang.toLowerCase().startsWith('en');
-  const labels = isEnglish ? {
+  const labels = document.documentElement.lang === 'pl' ? {title:'Twoja prywatność jest ważna',body:'Opcjonalne pliki cookie Google Analytics pomagają nam zrozumieć odwiedziny i ulepszać stronę. Pomiar uruchamia się dopiero po wyrażeniu zgody.',yes:'Zezwól na analitykę',no:'Odrzuć analitykę',info:'Informacje o cookies',setting:'Ustawienia cookies',close:'Zamknij',saved:'Twój wybór został zapisany.'} : isEnglish ? {
     title: 'Your privacy matters',
     body: 'We use optional Google Analytics cookies to understand visits and improve the website. Analytics is disabled until you agree.',
     yes: 'Allow analytics', no: 'Reject analytics', info: 'Cookie information', setting: 'Cookie settings', close: 'Close', saved: 'Your choice has been saved.'
