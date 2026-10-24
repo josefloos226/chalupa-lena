@@ -1,10 +1,11 @@
 
 (()=>{
  const root=document.getElementById('lenaAvailability'); if(!root)return;
+ const de=document.documentElement.lang==='de';
  const pl=document.documentElement.lang==='pl';
  const en=document.documentElement.lang==='en';
- const names=pl?['Styczeń','Luty','Marzec','Kwiecień','Maj','Czerwiec','Lipiec','Sierpień','Wrzesień','Październik','Listopad','Grudzień']:en?['January','February','March','April','May','June','July','August','September','October','November','December']:['Leden','Únor','Březen','Duben','Květen','Červen','Červenec','Srpen','Září','Říjen','Listopad','Prosinec'];
- const wd=pl?['PN','WT','ŚR','CZ','PT','SO','ND']:en?['MO','TU','WE','TH','FR','SA','SU']:['PO','ÚT','ST','ČT','PÁ','SO','NE'];
+ const names=de?['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember']:pl?['Styczeń','Luty','Marzec','Kwiecień','Maj','Czerwiec','Lipiec','Sierpień','Wrzesień','Październik','Listopad','Grudzień']:en?['January','February','March','April','May','June','July','August','September','October','November','December']:['Leden','Únor','Březen','Duben','Květen','Červen','Červenec','Srpen','Září','Říjen','Listopad','Prosinec'];
+ const wd=de?['MO','DI','MI','DO','FR','SA','SO']:pl?['PN','WT','ŚR','CZ','PT','SO','ND']:en?['MO','TU','WE','TH','FR','SA','SU']:['PO','ÚT','ST','ČT','PÁ','SO','NE'];
  const now=new Date();
  const currentMonth=new Date(now.getFullYear(),now.getMonth(),1);
  let start=new Date(currentMonth);
@@ -48,7 +49,7 @@
      for(let d=1;d<=count;d++){
        const state=stateFor(y,m,d),q=document.createElement('span');
        q.className=`availability-day ${state}`; q.textContent=d;
-       q.title=pl?(state==='free'?'Wolne':state==='arrival'?'Przyjazd – zajęte od popołudnia':state==='departure'?'Wyjazd – zajęte do rana':'Zajęte'):en?(state==='free'?'Available':state==='arrival'?'Check-in – booked from the afternoon':state==='departure'?'Check-out – booked until the morning':'Booked'):(state==='free'?'Volný termín':state==='arrival'?'Příjezd – odpoledne obsazeno':state==='departure'?'Odjezd – dopoledne obsazeno':'Obsazeno');
+       q.title=de?(state==='free'?'Frei':state==='arrival'?'Anreise – ab nachmittags belegt':state==='departure'?'Abreise – bis vormittags belegt':'Belegt'):pl?(state==='free'?'Wolne':state==='arrival'?'Przyjazd – zajęte od popołudnia':state==='departure'?'Wyjazd – zajęte do rana':'Zajęte'):en?(state==='free'?'Available':state==='arrival'?'Check-in – booked from the afternoon':state==='departure'?'Check-out – booked until the morning':'Booked'):(state==='free'?'Volný termín':state==='arrival'?'Příjezd – odpoledne obsazeno':state==='departure'?'Odjezd – dopoledne obsazeno':'Obsazeno');
        days.appendChild(q);
      }
      box.appendChild(days); root.appendChild(box);

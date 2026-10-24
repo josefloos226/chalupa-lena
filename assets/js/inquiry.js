@@ -6,6 +6,7 @@
   const endpoint = 'https://chalupa-lena-form.josef-loos226.workers.dev/';
   const status = document.getElementById('formStatus');
   const button = form.querySelector('button[type="submit"]');
+  const de = document.documentElement.lang === 'de';
   const pl = document.documentElement.lang === 'pl';
   const en = document.documentElement.lang === 'en';
   let sending = false;
@@ -25,7 +26,7 @@
     // Send one form-urlencoded POST; aliases keep the existing Worker compatible.
     const payload = new URLSearchParams({
       name, email, phone, dates, guests, message,
-      language: pl ? 'pl' : en ? 'en' : 'cs', lang: pl ? 'pl' : en ? 'en' : 'cs',
+      language: de ? 'de' : pl ? 'pl' : en ? 'en' : 'cs', lang: de ? 'de' : pl ? 'pl' : en ? 'en' : 'cs',
       jmeno: name, termin: dates, pocet_hostu: guests, zprava: message,
       'Jméno a příjmení': name, 'Telefon': phone,
       'Termín pobytu': dates, 'Počet hostů': guests, 'Zpráva': message,
@@ -34,7 +35,7 @@
     sending = true;
     button.disabled = true;
     const originalText = button.textContent;
-    button.textContent = pl ? 'Wysyłamy zapytanie…' : en ? 'Sending your enquiry…' : 'Odesíláme poptávku…';
+    button.textContent = de ? 'Eure Anfrage wird gesendet …' : pl ? 'Wysyłamy zapytanie…' : en ? 'Sending your enquiry…' : 'Odesíláme poptávku…';
     status.className = 'full formStatus';
     status.replaceChildren();
     try {
@@ -48,15 +49,15 @@
       if (!response.ok || (result && result.ok === false)) throw new Error('Submission failed');
       form.reset();
       if (typeof window.lenaTrackEvent === 'function') {
-        window.lenaTrackEvent('generate_lead', { method: 'website_enquiry', language: pl ? 'pl' : en ? 'en' : 'cs' });
+        window.lenaTrackEvent('generate_lead', { method: 'website_enquiry', language: de ? 'de' : pl ? 'pl' : en ? 'en' : 'cs' });
       }
       status.className = 'full formStatus formStatus--success lenaFormFeedback';
       status.innerHTML = '<span class="lenaFormFeedback__icon" aria-hidden="true">✓</span>' +
-        '<span class="lenaFormFeedback__body"><strong>' + (pl ? 'Dziękujemy za zapytanie!' : en ? 'Thank you for your enquiry!' : 'Děkujeme za vaši poptávku!') + '</strong>' +
-        '<span>' + (pl ? 'Otrzymaliśmy Twoje zapytanie i wkrótce się odezwiemy. Rezerwacja nie jest jeszcze potwierdzona.' : en ? 'We have received your enquiry and will get back to you shortly. Your booking is not confirmed yet.' : 'Vaši nezávaznou poptávku jsme úspěšně přijali. Na váš e-mail jsme odeslali potvrzení a co nejdříve se vám ozveme.') + '</span></span>';
+        '<span class="lenaFormFeedback__body"><strong>' + (de ? 'Vielen Dank für eure Anfrage!' : pl ? 'Dziękujemy za zapytanie!' : en ? 'Thank you for your enquiry!' : 'Děkujeme za vaši poptávku!') + '</strong>' +
+        '<span>' + (de ? 'Wir haben eure Anfrage erhalten und melden uns bald. Eure Buchung ist noch nicht bestätigt.' : pl ? 'Otrzymaliśmy Twoje zapytanie i wkrótce się odezwiemy. Rezerwacja nie jest jeszcze potwierdzona.' : en ? 'We have received your enquiry and will get back to you shortly. Your booking is not confirmed yet.' : 'Vaši nezávaznou poptávku jsme úspěšně přijali. Na váš e-mail jsme odeslali potvrzení a co nejdříve se vám ozveme.') + '</span></span>';
     } catch (error) {
       status.className = 'full formStatus formStatus--error';
-      status.textContent = pl ? 'Nie udało się wysłać zapytania. Spróbuj ponownie lub napisz na info@chalupa-lena.cz.' : en ? 'Your enquiry could not be sent. Please try again or email info@chalupa-lena.cz.' : 'Poptávku se nepodařilo odeslat. Zkuste to prosím znovu nebo nám napište na info@chalupa-lena.cz.';
+      status.textContent = de ? 'Die Anfrage konnte nicht gesendet werden. Bitte versucht es erneut oder schreibt an info@chalupa-lena.cz.' : pl ? 'Nie udało się wysłać zapytania. Spróbuj ponownie lub napisz na info@chalupa-lena.cz.' : en ? 'Your enquiry could not be sent. Please try again or email info@chalupa-lena.cz.' : 'Poptávku se nepodařilo odeslat. Zkuste to prosím znovu nebo nám napište na info@chalupa-lena.cz.';
     } finally {
       sending = false;
       button.disabled = false;
