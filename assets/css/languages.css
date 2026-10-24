@@ -32,3 +32,19 @@
 @media(min-width:1121px){
  nav.main-nav.lena-nav .desktop-links.lena-desktop-nav .lena-social-desktop{min-height:40px;padding-right:20px;border-right:1px solid #d8d3c9;margin-right:0}
 }
+
+/* V3.9.2 — compact mobile language picker; keep header within viewport. */
+@media(max-width:1120px){
+ nav.main-nav.lena-nav{box-sizing:border-box!important;max-width:100%!important;min-width:0!important;gap:8px!important}
+ nav.main-nav.lena-nav .mobile-head-controls{flex:0 0 auto!important;min-width:0!important;gap:6px!important}
+ nav.main-nav.lena-nav .mobile-langs{margin-left:0!important;padding-left:7px!important;gap:0!important}
+ .lena-language-select{box-sizing:border-box;width:62px;min-height:44px;margin:0;padding:0 4px;border:0;border-radius:0;background:transparent;color:#242625;font:600 16px Arial,sans-serif;cursor:pointer}
+ .lena-language-select:focus-visible{outline:2px solid #a6844e;outline-offset:2px}
+}
+@media(max-width:400px){
+ nav.main-nav.lena-nav{padding-left:12px!important;padding-right:12px!important}
+ nav.main-nav.lena-nav .lena-selected-logo.header-logo{flex:0 1 105px!important;width:105px!important;min-width:0!important}
+ nav.main-nav.lena-nav .lena-selected-logo.header-logo img{width:100%!important;max-width:105px!important;object-fit:contain}
+ nav.main-nav.lena-nav .lena-social-mobile{gap:2px!important}
+ nav.main-nav.lena-nav .lena-social-mobile .lena-social-link{width:28px!important}
+}

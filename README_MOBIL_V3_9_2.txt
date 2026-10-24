@@ -1,0 +1,1 @@
+V3.9.2: Mobilní výběr CZ/EN/PL nahrazen jedním nativním rozbalovacím polem. Desktop zůstává beze změny. Zachována jazyková revize V3.9.1 a rezervace. Nahrát obsah složky chalupa-lena do kořene repozitáře.

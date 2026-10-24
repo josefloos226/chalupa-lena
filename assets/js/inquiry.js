@@ -53,7 +53,7 @@
       status.className = 'full formStatus formStatus--success lenaFormFeedback';
       status.innerHTML = '<span class="lenaFormFeedback__icon" aria-hidden="true">✓</span>' +
         '<span class="lenaFormFeedback__body"><strong>' + (pl ? 'Dziękujemy za zapytanie!' : en ? 'Thank you for your enquiry!' : 'Děkujeme za vaši poptávku!') + '</strong>' +
-        '<span>' + (pl ? 'Otrzymaliśmy zapytanie i wkrótce się odezwiemy. Rezerwacja nie jest jeszcze potwierdzona.' : en ? 'We have received your enquiry and will get back to you shortly. Your booking is not confirmed yet.' : 'Vaši nezávaznou poptávku jsme úspěšně přijali. Na váš e-mail jsme odeslali potvrzení a co nejdříve se vám ozveme.') + '</span></span>';
+        '<span>' + (pl ? 'Otrzymaliśmy Twoje zapytanie i wkrótce się odezwiemy. Rezerwacja nie jest jeszcze potwierdzona.' : en ? 'We have received your enquiry and will get back to you shortly. Your booking is not confirmed yet.' : 'Vaši nezávaznou poptávku jsme úspěšně přijali. Na váš e-mail jsme odeslali potvrzení a co nejdříve se vám ozveme.') + '</span></span>';
     } catch (error) {
       status.className = 'full formStatus formStatus--error';
       status.textContent = pl ? 'Nie udało się wysłać zapytania. Spróbuj ponownie lub napisz na info@chalupa-lena.cz.' : en ? 'Your enquiry could not be sent. Please try again or email info@chalupa-lena.cz.' : 'Poptávku se nepodařilo odeslat. Zkuste to prosím znovu nebo nám napište na info@chalupa-lena.cz.';
