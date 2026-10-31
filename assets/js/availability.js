@@ -21,11 +21,13 @@
   ['2027-03-26','2027-04-05'],
   ['2027-05-05','2027-05-09'],
   ['2027-05-12','2027-05-16'],
-  ['2027-06-26','2027-07-01']
+  ['2027-06-26','2027-07-01'],
+  ['2027-08-11','2027-08-14']
  ];
  const iso=(y,m,d)=>`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
  function stateFor(y,m,d){
    const k=iso(y,m,d);
+   if(k>='2026-11-01' && k<='2026-11-30') return 'closed';
    for(const [a,b] of stays){
      if(k===a && k===b) return 'busy';
      if(k===a) return 'arrival';
@@ -48,8 +50,8 @@
      const count=new Date(y,m+1,0).getDate();
      for(let d=1;d<=count;d++){
        const state=stateFor(y,m,d),q=document.createElement('span');
-       q.className=`availability-day ${state}`; q.textContent=d;
-       q.title=de?(state==='free'?'Frei':state==='arrival'?'Anreise – ab nachmittags belegt':state==='departure'?'Abreise – bis vormittags belegt':'Belegt'):pl?(state==='free'?'Wolne':state==='arrival'?'Przyjazd – zajęte od popołudnia':state==='departure'?'Wyjazd – zajęte do rana':'Zajęte'):en?(state==='free'?'Available':state==='arrival'?'Check-in – booked from the afternoon':state==='departure'?'Check-out – booked until the morning':'Booked'):(state==='free'?'Volný termín':state==='arrival'?'Příjezd – odpoledne obsazeno':state==='departure'?'Odjezd – dopoledne obsazeno':'Obsazeno');
+       q.className=`availability-day ${state==='closed'?'busy':state}`; q.textContent=d;
+       q.title=state==='closed'?(de?'Nicht verfügbar':pl?'Niedostępne':en?'Unavailable':'Nedostupné'):de?(state==='free'?'Frei':state==='arrival'?'Anreise – ab nachmittags belegt':state==='departure'?'Abreise – bis vormittags belegt':'Belegt'):pl?(state==='free'?'Wolne':state==='arrival'?'Przyjazd – zajęte od popołudnia':state==='departure'?'Wyjazd – zajęte do rana':'Zajęte'):en?(state==='free'?'Available':state==='arrival'?'Check-in – booked from the afternoon':state==='departure'?'Check-out – booked until the morning':'Booked'):(state==='free'?'Volný termín':state==='arrival'?'Příjezd – odpoledne obsazeno':state==='departure'?'Odjezd – dopoledne obsazeno':'Obsazeno');
        days.appendChild(q);
      }
      box.appendChild(days); root.appendChild(box);
