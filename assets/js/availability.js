@@ -24,17 +24,17 @@
   ['2027-06-26','2027-07-01'],
   ['2027-08-11','2027-08-14']
  ];
+ let external=[],syncOK=false;
  const iso=(y,m,d)=>`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
  function stateFor(y,m,d){
    const k=iso(y,m,d);
    if(k>='2026-11-01' && k<='2026-11-30') return 'closed';
-   for(const [a,b] of stays){
-     if(k===a && k===b) return 'busy';
-     if(k===a) return 'arrival';
-     if(k===b) return 'departure';
-     if(k>a && k<b) return 'busy';
+   let arrival=false,departure=false;
+   for(const [a,b] of [...stays,...external]){
+    if(k>a && k<b)return 'busy';
+    arrival ||= k===a; departure ||= k===b;
    }
-   return 'free';
+   return arrival&&departure?'busy':arrival?'arrival':departure?'departure':syncOK?'free':'unknown';
  }
  function render(){
    root.innerHTML='';
@@ -52,6 +52,7 @@
        const state=stateFor(y,m,d),q=document.createElement('span');
        q.className=`availability-day ${state==='closed'?'busy':state}`; q.textContent=d;
        q.title=state==='closed'?(de?'Nicht verfügbar':pl?'Niedostępne':en?'Unavailable':'Nedostupné'):de?(state==='free'?'Frei':state==='arrival'?'Anreise – ab nachmittags belegt':state==='departure'?'Abreise – bis vormittags belegt':'Belegt'):pl?(state==='free'?'Wolne':state==='arrival'?'Przyjazd – zajęte od popołudnia':state==='departure'?'Wyjazd – zajęte do rana':'Zajęte'):en?(state==='free'?'Available':state==='arrival'?'Check-in – booked from the afternoon':state==='departure'?'Check-out – booked until the morning':'Booked'):(state==='free'?'Volný termín':state==='arrival'?'Příjezd – odpoledne obsazeno':state==='departure'?'Odjezd – dopoledne obsazeno':'Obsazeno');
+       if(state==='unknown'){q.style.background='#e6e3de';q.title=de?'Verfügbarkeit auf Anfrage':pl?'Dostępność do potwierdzenia':en?'Please enquire about availability':'Dostupnost na dotaz';}
        days.appendChild(q);
      }
      box.appendChild(days); root.appendChild(box);
@@ -67,5 +68,7 @@
  let mobileCalendar=window.matchMedia('(max-width:760px)');
  if(mobileCalendar.addEventListener) mobileCalendar.addEventListener('change',render);
  else if(mobileCalendar.addListener) mobileCalendar.addListener(render);
- render();
+ const note=document.createElement('p');root.before(note);
+ async function sync(){try{const r=await fetch('https://lena-kalendar.josef-loos226.workers.dev/availability',{signal:AbortSignal.timeout(10000)});if(!r.ok)throw Error();const data=await r.json();if(!Array.isArray(data.stays)||!data.stays.every(x=>Array.isArray(x)&&x.length===2&&x.every(v=>typeof v==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(v))&&x[0]<x[1]))throw Error();external=data.stays;syncOK=true;note.hidden=true;}catch{syncOK=false;note.hidden=false;note.textContent=de?'Aktuelle Verfügbarkeit bitte anfragen.':pl?'Zapytaj nas o aktualną dostępność.':en?'Please contact us to confirm availability.':'Aktuální dostupnost ověříme na dotaz.';}render();}
+ note.hidden=true;render();sync();setInterval(()=>{if(!document.hidden)sync()},300000);
 })();
