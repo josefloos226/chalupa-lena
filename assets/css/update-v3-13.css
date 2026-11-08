@@ -13,3 +13,5 @@
 .lb-close{top:12px;right:18px}.lb-prev{left:12px;top:50%}.lb-next{right:12px;top:50%}
 @media(max-width:650px){#okoli .regionText>p{font-size:17px}#okoli .okoli-home-cta{font-size:20px!important}.lena-lightbox{padding:70px 12px 100px}.lena-lightbox img{max-height:calc(100dvh - 210px)}.lena-lightbox .lb-prev{top:auto;bottom:22px;left:calc(50% - 60px)}.lena-lightbox .lb-next{top:auto;bottom:22px;right:calc(50% - 60px)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}
+
+.lena-lightbox button[hidden]{display:none}
