@@ -20,3 +20,19 @@
 .lena-local-seo{padding-left:5vw;padding-right:5vw}
 .lena-local-seo__inner{max-width:1500px}
 @media(max-width:1099px){.lena-local-seo{padding-left:6vw;padding-right:6vw}}
+
+/* Shared content edges for the introduction and year-round destinations. */
+.okoli-v210 .story > .season-overview,
+.okoli-v210 .story > .season-section--yearround{
+ width:min(1400px,calc(100% - 72px)) !important;
+ max-width:1400px !important;
+ margin-left:auto !important;margin-right:auto !important;
+ padding-left:0 !important;padding-right:0 !important;
+ box-sizing:border-box;
+}
+.okoli-v210 .season-overview__intro{max-width:none !important;width:100%}
+.okoli-v210 .season-overview p{max-width:none !important}
+@media(max-width:900px){
+ .okoli-v210 .story > .season-overview,
+ .okoli-v210 .story > .season-section--yearround{width:calc(100% - 44px) !important}
+}
